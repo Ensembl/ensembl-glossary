@@ -1,10 +1,94 @@
 format-version: 1.2
-data-version: releases/2018-01-15
+data-version: http://ensembl.org/glossary/releases/2018-01-15
 remark: ensembl-glossary
 ontology: ensembl-glossary
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/ENSEMBL-GLOSSARY_00000000>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/ENSEMBL-GLOSSARY_00000000> (ensembl-glossary)\n\nSubClassOf(<http://purl.obolibrary.org/obo/ENSEMBL-GLOSSARY_00000000> owl:Thing)\n\n\n)
 
 [Term]
-id: ENSEMBL-GLOSSARY:00000000
-name: ensembl-glossary
+id: ENSGLOSSARY:0000001
+name: Homologues
+def: "Specific sequences that are descended from the same common sequence in an ancestor." []
+synonym: "Homologs" EXACT []
+
+[Term]
+id: ENSGLOSSARY:0000002
+name: Orthologues
+def: "Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart." []
+synonym: "Orthologs" EXACT []
+is_a: ENSGLOSSARY:0000001 ! Homologues
+
+[Term]
+id: ENSGLOSSARY:0000003
+name: 1-to-1 orthologues
+def: "A type of orthologue assigned for a pair of species where only one copy is found in each species." []
+synonym: " one-to-one orthologs" EXACT []
+synonym: " one-to-one orthologues" EXACT []
+synonym: "1-to-1 orthologs" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Orthologues
+
+[Term]
+id: ENSGLOSSARY:0000004
+name: 1-to-many orthologues
+def: "A type of orthologue assigned for a pair of species where one gene in one species is orthologous to multiple genes in the other species, due to (a) duplication event(s) in the second species." []
+synonym: " one-to-many orthologs" EXACT []
+synonym: " one-to-many orthologues" EXACT []
+synonym: "1-to-many orthologs" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Orthologues
+
+[Term]
+id: ENSGLOSSARY:0000005
+name: Many-to-many orthologues
+def: "A type of orthologue assigned for a pair of species where multiple orthologues are found in both species, where the duplication events in both species occurred after the speciation event." []
+synonym: "many-to-many orthologs" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Orthologues
+
+[Term]
+id: ENSGLOSSARY:0000006
+name: Apparent orthologues
+def: "Apparent orthologues occur when genes in different species have homology to one another, but we have reason to believe that they are not directly orthologous to each other. For example, this may occur when there has been a gene duplication but in both species we only have one gene. This may be due to gaps in the genome assemblies, gene deletions or degradation to pseudogenes. These genes are actually between species paralogues, but based on our data we cannot say for certain that the two genes are not orthologues that have significantly diverged." []
+synonym: "Apparent orthologs" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Orthologues
+
+[Term]
+id: ENSGLOSSARY:0000007
+name: Paralogues
+def: "Sequences (homologues) that have evolved by duplication." []
+synonym: "Paralogs" EXACT []
+is_a: ENSGLOSSARY:0000001 ! Homologues
+
+[Term]
+id: ENSGLOSSARY:0000008
+name: Between species paralogues
+def: "Members of the same gene family in different species that are not direct orthologues. In a gene tree, these genes are separated by a duplication node." []
+synonym: " out paralogs" EXACT []
+synonym: " out paralogues" EXACT []
+synonym: "Between species paralogs" EXACT []
+is_a: ENSGLOSSARY:0000007 ! Paralogues
+
+[Term]
+id: ENSGLOSSARY:0000009
+name: Contiguous gene split
+def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments of the gene are within 1Mb of each other on the same chromosome strand." []
+is_a: ENSGLOSSARY:0000007 ! Paralogues
+
+[Term]
+id: ENSGLOSSARY:0000010
+name: Other paralogues
+def: "Paralogues which are very far away from the other members of a paralogue family. They are part of the same super-family, but the precise taxonomic relationship to other members is undefined, as the trees are too large to compute." []
+synonym: "Other paralogs" EXACT []
+is_a: ENSGLOSSARY:0000007 ! Paralogues
+
+[Term]
+id: ENSGLOSSARY:0000011
+name: Putative gene split
+def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments are more than 1Mb apart, or on different chromosomes or strands." []
+is_a: ENSGLOSSARY:0000007 ! Paralogues
+
+[Term]
+id: ENSGLOSSARY:0000012
+name: Within species paralogues
+def: "Two or more versions of a duplicated gene in a single species. In a gene tree, the genes are separated by a duplication node." []
+synonym: " in paralogs" EXACT []
+synonym: " in paralogues" EXACT []
+synonym: "Within species paralogs" EXACT []
+is_a: ENSGLOSSARY:0000007 ! Paralogues
 

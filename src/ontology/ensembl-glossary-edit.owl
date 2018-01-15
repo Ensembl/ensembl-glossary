@@ -1,3 +1,4 @@
+Prefix(:=<http://purl.obolibrary.org/obo/ensembl-glossary.owl#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -8,6 +9,15 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Ontology(<http://purl.obolibrary.org/obo/ensembl-glossary.owl>
 Annotation(rdfs:comment "ensembl-glossary")
 
-Declaration(Class(<http://purl.obolibrary.org/obo/ENSEMBL-GLOSSARY_00000000>))
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENSEMBL-GLOSSARY_00000000> "ensembl-glossary"@en)
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000115> "definition")
+
+
+
 )
