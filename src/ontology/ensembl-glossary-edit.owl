@@ -10,6 +10,7 @@ Ontology(<http://purl.obolibrary.org/obo/ensembl-glossary.owl>
 Annotation(rdfs:comment "ensembl-glossary")
 
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
 ############################
 #   Annotation Properties
 ############################
@@ -17,6 +18,10 @@ Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 # Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000115> "definition")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> (hasDbXref)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "hasDbXref")
 
 
 

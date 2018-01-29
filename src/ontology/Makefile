@@ -45,7 +45,7 @@ release: $(ONT).owl $(ONT).obo
 # ----------------------------------------
 
 ensembl-glossary-template.owl: ../templates/ontology.tsv 
-	$(ROBOT) template --prefix "ENSGLOSSARY: http://ensembl.org/glossary/ENSGLOSSARY_" --template $< --output $@
+	$(ROBOT) template --prefix "ENSGLOSSARY: http://ensembl.org/glossary/ENSGLOSSARY_" --prefix "ENSGLOSSARYPROP: http://ensembl.org/glossary/property/"  --template $< --output $@
 
 
 # ----------------------------------------
@@ -54,7 +54,7 @@ ensembl-glossary-template.owl: ../templates/ontology.tsv
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+VCHECKS = trailing-whitespace owldef-self-reference xref-syntax nolabels
 
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2018-01-15
+data-version: http://ensembl.org/glossary/releases/2018-01-29
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -8,6 +8,9 @@ id: ENSGLOSSARY:0000001
 name: Homologues
 def: "Specific sequences that are descended from the same common sequence in an ancestor." []
 synonym: "Homologs" EXACT []
+property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology xsd:string
+property_value: DbXref SO:0000853 xsd:string
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000002
@@ -15,6 +18,8 @@ name: Orthologues
 def: "Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart." []
 synonym: "Orthologs" EXACT []
 is_a: ENSGLOSSARY:0000001 ! Homologues
+property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology#Orthology xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000003
@@ -24,6 +29,7 @@ synonym: " one-to-one orthologs" EXACT []
 synonym: " one-to-one orthologues" EXACT []
 synonym: "1-to-1 orthologs" EXACT []
 is_a: ENSGLOSSARY:0000002 ! Orthologues
+property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000004
@@ -33,6 +39,7 @@ synonym: " one-to-many orthologs" EXACT []
 synonym: " one-to-many orthologues" EXACT []
 synonym: "1-to-many orthologs" EXACT []
 is_a: ENSGLOSSARY:0000002 ! Orthologues
+property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000005
@@ -40,6 +47,7 @@ name: Many-to-many orthologues
 def: "A type of orthologue assigned for a pair of species where multiple orthologues are found in both species, where the duplication events in both species occurred after the speciation event." []
 synonym: "many-to-many orthologs" EXACT []
 is_a: ENSGLOSSARY:0000002 ! Orthologues
+property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000006
@@ -47,6 +55,7 @@ name: Apparent orthologues
 def: "Apparent orthologues occur when genes in different species have homology to one another, but we have reason to believe that they are not directly orthologous to each other. For example, this may occur when there has been a gene duplication but in both species we only have one gene. This may be due to gaps in the genome assemblies, gene deletions or degradation to pseudogenes. These genes are actually between species paralogues, but based on our data we cannot say for certain that the two genes are not orthologues that have significantly diverged." []
 synonym: "Apparent orthologs" EXACT []
 is_a: ENSGLOSSARY:0000002 ! Orthologues
+property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000007
@@ -54,6 +63,8 @@ name: Paralogues
 def: "Sequences (homologues) that have evolved by duplication." []
 synonym: "Paralogs" EXACT []
 is_a: ENSGLOSSARY:0000001 ! Homologues
+property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology#Paralogy xsd:string
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000008
@@ -63,12 +74,14 @@ synonym: " out paralogs" EXACT []
 synonym: " out paralogues" EXACT []
 synonym: "Between species paralogs" EXACT []
 is_a: ENSGLOSSARY:0000007 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000009
 name: Contiguous gene split
 def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments of the gene are within 1Mb of each other on the same chromosome strand." []
 is_a: ENSGLOSSARY:0000007 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000010
@@ -76,12 +89,14 @@ name: Other paralogues
 def: "Paralogues which are very far away from the other members of a paralogue family. They are part of the same super-family, but the precise taxonomic relationship to other members is undefined, as the trees are too large to compute." []
 synonym: "Other paralogs" EXACT []
 is_a: ENSGLOSSARY:0000007 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000011
 name: Putative gene split
 def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments are more than 1Mb apart, or on different chromosomes or strands." []
 is_a: ENSGLOSSARY:0000007 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000012
@@ -91,4 +106,5 @@ synonym: " in paralogs" EXACT []
 synonym: " in paralogues" EXACT []
 synonym: "Within species paralogs" EXACT []
 is_a: ENSGLOSSARY:0000007 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
