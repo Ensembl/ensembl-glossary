@@ -8,8 +8,8 @@ id: ENSGLOSSARY:0000001
 name: Homologues
 def: "Specific sequences that are descended from the same common sequence in an ancestor." []
 synonym: "Homologs" EXACT []
-property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology xsd:string
-property_value: DbXref SO:0000853 xsd:string
+xref: https://en.wikipedia.org/wiki/Sequence_homology
+xref: SO:0000853
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html xsd:string
 
 [Term]
@@ -17,9 +17,9 @@ id: ENSGLOSSARY:0000002
 name: Orthologues
 def: "Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart." []
 synonym: "Orthologs" EXACT []
+xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
+xref: https://en.wikipedia.org/wiki/Sequence_homology#Orthology
 is_a: ENSGLOSSARY:0000001 ! Homologues
-property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
-property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology#Orthology xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000003
@@ -28,8 +28,8 @@ def: "A type of orthologue assigned for a pair of species where only one copy is
 synonym: " one-to-one orthologs" EXACT []
 synonym: " one-to-one orthologues" EXACT []
 synonym: "1-to-1 orthologs" EXACT []
+xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
 is_a: ENSGLOSSARY:0000002 ! Orthologues
-property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000004
@@ -38,32 +38,32 @@ def: "A type of orthologue assigned for a pair of species where one gene in one 
 synonym: " one-to-many orthologs" EXACT []
 synonym: " one-to-many orthologues" EXACT []
 synonym: "1-to-many orthologs" EXACT []
+xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
 is_a: ENSGLOSSARY:0000002 ! Orthologues
-property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000005
 name: Many-to-many orthologues
 def: "A type of orthologue assigned for a pair of species where multiple orthologues are found in both species, where the duplication events in both species occurred after the speciation event." []
 synonym: "many-to-many orthologs" EXACT []
+xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
 is_a: ENSGLOSSARY:0000002 ! Orthologues
-property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000006
 name: Apparent orthologues
 def: "Apparent orthologues occur when genes in different species have homology to one another, but we have reason to believe that they are not directly orthologous to each other. For example, this may occur when there has been a gene duplication but in both species we only have one gene. This may be due to gaps in the genome assemblies, gene deletions or degradation to pseudogenes. These genes are actually between species paralogues, but based on our data we cannot say for certain that the two genes are not orthologues that have significantly diverged." []
 synonym: "Apparent orthologs" EXACT []
+xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
 is_a: ENSGLOSSARY:0000002 ! Orthologues
-property_value: DbXref http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]
 id: ENSGLOSSARY:0000007
 name: Paralogues
 def: "Sequences (homologues) that have evolved by duplication." []
 synonym: "Paralogs" EXACT []
+xref: https://en.wikipedia.org/wiki/Sequence_homology#Paralogy
 is_a: ENSGLOSSARY:0000001 ! Homologues
-property_value: DbXref https://en.wikipedia.org/wiki/Sequence_homology#Paralogy xsd:string
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
 
 [Term]

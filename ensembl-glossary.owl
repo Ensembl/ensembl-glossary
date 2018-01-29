@@ -41,12 +41,6 @@
     
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#DbXref -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#DbXref"/>
-    
-
-
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
@@ -77,8 +71,8 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000001">
         <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html</property:documentation>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific sequences that are descended from the same common sequence in an ancestor.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000853</oboInOwl:DbXref>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000853</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homologs</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homologues</rdfs:label>
     </owl:Class>
@@ -90,8 +84,8 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000002">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000001"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:DbXref>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology#Orthology</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology#Orthology</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orthologs</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orthologues</rdfs:label>
     </owl:Class>
@@ -103,7 +97,7 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000003">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000002"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of orthologue assigned for a pair of species where only one copy is found in each species.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> one-to-one orthologs</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> one-to-one orthologues</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-to-1 orthologs</oboInOwl:hasExactSynonym>
@@ -117,7 +111,7 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000004">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000002"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of orthologue assigned for a pair of species where one gene in one species is orthologous to multiple genes in the other species, due to (a) duplication event(s) in the second species.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> one-to-many orthologs</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> one-to-many orthologues</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-to-many orthologs</oboInOwl:hasExactSynonym>
@@ -131,7 +125,7 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000005">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000002"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of orthologue assigned for a pair of species where multiple orthologues are found in both species, where the duplication events in both species occurred after the speciation event.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">many-to-many orthologs</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Many-to-many orthologues</rdfs:label>
     </owl:Class>
@@ -143,7 +137,7 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000006">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000002"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apparent orthologues occur when genes in different species have homology to one another, but we have reason to believe that they are not directly orthologous to each other. For example, this may occur when there has been a gene duplication but in both species we only have one gene. This may be due to gaps in the genome assemblies, gene deletions or degradation to pseudogenes. These genes are actually between species paralogues, but based on our data we cannot say for certain that the two genes are not orthologues that have significantly diverged.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apparent orthologs</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apparent orthologues</rdfs:label>
     </owl:Class>
@@ -156,7 +150,7 @@
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000001"/>
         <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types</property:documentation>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequences (homologues) that have evolved by duplication.</obo:IAO_0000115>
-        <oboInOwl:DbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology#Paralogy</oboInOwl:DbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sequence_homology#Paralogy</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paralogs</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paralogues</rdfs:label>
     </owl:Class>
