@@ -9,6 +9,7 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Ontology(<http://purl.obolibrary.org/obo/ensembl-glossary.owl>
 Annotation(rdfs:comment "ensembl-glossary")
 
+Declaration(ObjectProperty(<http://ensembl.org/glossary/property/related>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
 ############################
@@ -22,6 +23,15 @@ AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000115> "def
 # Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> (hasDbXref)
 
 AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "hasDbXref")
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://ensembl.org/glossary/property/related> (related)
+
+AnnotationAssertion(rdfs:label <http://ensembl.org/glossary/property/related> "related"@en)
 
 
 
