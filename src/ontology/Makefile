@@ -45,7 +45,7 @@ release: $(ONT).owl $(ONT).obo
 # ----------------------------------------
 
 ensembl-glossary-template.owl: ../templates/ontology.tsv 
-	$(ROBOT) template --prefix "ENSGLOSSARY: http://ensembl.org/glossary/ENSGLOSSARY_" --prefix "ENSGLOSSARYPROP: http://ensembl.org/glossary/property/"  --template $< --output $@
+	$(ROBOT) template --input $(SRC) --prefix "ENSGLOSSARY: http://ensembl.org/glossary/ENSGLOSSARY_" --prefix "ENSGLOSSARYPROP: http://ensembl.org/glossary/property/"  --template $< --output $@
 
 
 # ----------------------------------------
