@@ -1,110 +1,2970 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2018-01-29
+data-version: http://ensembl.org/glossary/releases/2018-04-17
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
 [Term]
 id: ENSGLOSSARY:0000001
-name: Homologues
-def: "Specific sequences that are descended from the same common sequence in an ancestor." []
-synonym: "Homologs" EXACT []
-xref: https://en.wikipedia.org/wiki/Sequence_homology
-xref: SO:0000853
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html xsd:string
+name: Genome annotation
+def: "A genomic locus that has been annotated." []
+synonym: " element" EXACT []
+synonym: "Feature" EXACT []
+xref: SO:0000001
 
 [Term]
 id: ENSGLOSSARY:0000002
-name: Orthologues
-def: "Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart." []
-synonym: "Orthologs" EXACT []
-xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
-xref: https://en.wikipedia.org/wiki/Sequence_homology#Orthology
-is_a: ENSGLOSSARY:0000001 ! Homologues
+name: Gene
+def: "Genomic locus where transcription occurs. A gene may have one or more transcripts, which may or may not encode proteins." []
+xref: https://en.wikipedia.org/wiki/Gene
+xref: SO:0000704
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
 
 [Term]
 id: ENSGLOSSARY:0000003
+name: Transcript
+def: "A transcript is the operational unit of a gene. In a genomic context, transcripts consist of one or more exons, with adjoining exons being separated by introns. The exons/introns are transcribed and then the introns spliced out. Transcripts may or may not encode a protein" []
+synonym: " isoform" EXACT []
+synonym: "Splice variant" EXACT []
+xref: SO:0000673
+is_a: ENSGLOSSARY:0000002 ! Gene
+
+[Term]
+id: ENSGLOSSARY:0000004
+name: EST
+def: "Expressed Sequence Tag. Coarse sequence reads from flanking vector regions into the inserts of cDNA libraries. ESTs act as physical markers for cloning and full length sequencing of the cDNAs of expressed genes. Typically identified by purifying mRNAs, converting to cDNAs, and then sequencing a portion of the cDNAs. Usually short, single reads from a tissue or stage in development." []
+synonym: "Expressed sequence tag" EXACT []
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+
+[Term]
+id: ENSGLOSSARY:0000005
+name: Transcript support level
+def: "The Transcript Support Level (TSL) is a method to highlight the well-supported and poorly-supported transcript models for users, based on the type and quality of the alignments used to annotate the transcript." []
+synonym: "TSL" EXACT []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000006
+name: TSL 1
+def: "A transcript where all splice junctions are supported by at least one non-suspect mRNA." []
+synonym: "Transcript support level 1" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000007
+name: TSL 2
+def: "A transcript where the best supporting mRNA is flagged as suspect or the support is from multiple ESTs" []
+synonym: "Transcript support level 2" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000008
+name: TSL 3
+def: "A transcript where the only support is from a single EST" []
+synonym: "Transcript support level 3" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000009
+name: TSL 4
+def: "A transcript where the best supporting EST is flagged as suspect" []
+synonym: "Transcript support level 4" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000010
+name: TSL 5
+def: "A transcript where no single transcript supports the model structure." []
+synonym: "Transcript support level 5" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000011
+name: TSL NA
+def: "A transcript that was not analysed for TSL." []
+synonym: "Transcript support level not applicable" EXACT []
+is_a: ENSGLOSSARY:0000005 ! Transcript support level
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000012
+name: APPRIS
+def: "APPRIS is a system to annotate alternatively spliced transcripts based on a range of computational methods to identify the most functionally important transcript(s) of a gene." []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000013
+name: APPRIS P1
+def: "Transcript(s) expected to code for the main functional isoform based solely on the core modules in the APPRIS." []
+synonym: "APPRIS Principal 1" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000014
+name: APPRIS P2
+def: "Where the APPRIS core modules are unable to choose a clear principal variant (approximately 25% of human protein coding genes), the database chooses two or more of the CDS variants as \"candidates\" to be the principal variant." []
+synonym: "APPRIS Principal 2" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000015
+name: APPRIS P3
+def: "Where the APPRIS core modules are unable to choose a clear principal variant and there more than one of the variants have distinct CCDS identifiers, APPRIS selects the variant with lowest CCDS identifier as the principal variant. The lower the CCDS identifier, the earlier it was annotated." []
+synonym: "APPRIS Principal 3" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000016
+name: APPRIS P4
+def: "Where the APPRIS core modules are unable to choose a clear principal CDS and there is more than one variant with a distinct (but consecutive) CCDS identifiers, APPRIS selects the longest CCDS isoform as the principal variant." []
+synonym: "APPRIS Principal 4" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000017
+name: APPRIS P5
+def: "Where the APPRIS core modules are unable to choose a clear principal variant and none of the candidate variants are annotated by CCDS, APPRIS selects the longest of the candidate isoforms as the principal variant." []
+synonym: "APPRIS Principal 5" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000018
+name: APPRIS ALT1
+def: "For genes in which the APPRIS core modules are unable to choose a clear principal isoform, the ALT1 is the candidate transcript(s) models that is conserved in at least three tested species." []
+synonym: "APPRIS Alternative 1" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000019
+name: APPRIS ALT2
+def: "For genes in which the APPRIS core modules are unable to choose a clear principal isoform, the ALT1 is the candidate transcript(s) models that appear to be conserved in fewer than three tested species." []
+synonym: "APPRIS Alternative 2" EXACT []
+is_a: ENSGLOSSARY:0000012 ! APPRIS
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000020
+name: GENCODE Basic
+def: "A subset of the GENCODE transcript set, containing only 5' and 3' complete transcripts." []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000021
+name: 5' incomplete
+def: "A protein-coding transcript which is missing the start codon due to incomplete evidence." []
+synonym: "five prime incomplete" EXACT []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000022
+name: 3' incomplete
+def: "A protein-coding transcript which is missing the stop codon due to incomplete evidence." []
+synonym: "three prime incomplete" EXACT []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000023
+name: Canonical transcript
+def: "The canonical transcript is used in the gene tree analysis in Ensembl and does not necessarily reflect the most biologically relevant transcript of a gene. For human, the canonical transcript for a gene is set according to the following hierarchy: 1. Longest CCDS translation with no stop codons. 2. If no (1), choose the longest Ensembl/Havana merged translation with no stop codons. 3. If no (2), choose the longest translation with no stop codons. 4. If no translation, choose the longest non-protein-coding transcript." []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000024
+name: CCDS
+def: "A coding sequence in the Consensus Coding Sequence Set is consistently annotated between Ensembl, MGI, HGNC and NCBI. The long term goal is to support convergence towards a standard set of gene annotations on the human genome." []
+synonym: " Consensus Coding Sequence" EXACT []
+synonym: "Consensus CDS" EXACT []
+xref: https://en.wikipedia.org/wiki/Consensus_CDS_Project
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/ccds.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000025
+name: Biotype
+def: "A gene or transcript classification." []
+synonym: " Gene type" EXACT []
+synonym: " Transcript type" EXACT []
+synonym: "Type" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000026
+name: Protein coding
+def: "Gene/transcipt that contains an open reading frame (ORF)." []
+synonym: "Coding" EXACT []
+xref: https://en.wikipedia.org/wiki/Gene
+xref: SO:0001217
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000027
+name: Processed transcript
+def: "Gene/transcript that doesn't contain an open reading frame (ORF)." []
+xref: https://en.wikipedia.org/wiki/Non-coding_RNA
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000028
+name: Long non-coding RNA (lncRNA)
+def: "A non-coding gene/transcript >200bp in length" []
+synonym: " Long non-coding RNA" EXACT []
+synonym: "lncRNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Long_non-coding_RNA
+xref: SO:0002127
+is_a: ENSGLOSSARY:0000027 ! Processed transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000029
+name: Non coding
+def: "Transcripts which are known from the literature to not be protein coding." []
+xref: https://en.wikipedia.org/wiki/Non-coding_RNA
+xref: SO:0001263
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000030
+name: 3' overlapping ncRNA
+def: "Transcripts where ditag and/or published experimental data strongly supports the existence of long (>200bp) non-coding transcripts that overlap the 3'UTR of a protein-coding locus on the same strand." []
+synonym: "three prime overlapping ncRNA" EXACT []
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000031
+name: Antisense
+def: "Transcripts that overlap the genomic span (i.e. exon or introns) of a protein-coding locus on the opposite strand." []
+xref: https://en.wikipedia.org/wiki/Antisense_RNA
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000032
+name: lincRNA (long intergenic ncRNA)
+def: "Transcripts that are long intergenic non-coding RNA locus with a length >200bp. Requires lack of coding potential and may not be conserved between species." []
+synonym: " Long intergenic RNA" EXACT []
+synonym: " Long interspersed RNA" EXACT []
+synonym: "lincRNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Long_non-coding_RNA#Long_intergenic_non-coding_RNAs_(lincRNA)
+xref: SO:0001641
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000033
+name: Retained intron
+def: "An alternatively spliced transcript believed to contain intronic sequence relative to other, coding, transcripts of the same gene." []
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000034
+name: Sense intronic
+def: "A long non-coding transcript in introns of a coding gene that does not overlap any exons." []
+xref: SO:0002184
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000035
+name: Sense overlapping
+def: "A long non-coding transcript that contains a coding gene in its intron on the same strand." []
+xref: SO:0002183
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000036
+name: Macro lncRNA
+def: "Unspliced lncRNAs that are several kb in size." []
+is_a: ENSGLOSSARY:0000028 ! Long non-coding RNA (lncRNA)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000037
+name: ncRNA
+def: "A non-coding gene." []
+is_a: ENSGLOSSARY:0000027 ! Processed transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000038
+name: miRNA
+def: "A small RNA (~22bp) that silences the expression of target mRNA." []
+synonym: "micro RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/MicroRNA
+xref: SO:0001265
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000039
+name: piRNA
+def: "An RNA that interacts with piwi proteins involved in genetic silencing." []
+synonym: "piwi-interacting RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Piwi-interacting_RNA
+xref: SO:0001638
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000040
+name: rRNA
+def: "The RNA component of a ribosome." []
+synonym: "ribsosomal RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Ribosomal_RNA
+xref: SO:0001637
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000041
+name: siRNA
+def: "A small RNA (20-25bp) that silences the expression of target mRNA through the RNAi pathway." []
+synonym: " short interfering RNA" EXACT []
+synonym: " silencing RNA" EXACT []
+synonym: "small interfering RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Small_interfering_RNA
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000042
+name: snRNA
+def: "Small RNA molecules that are found in the cell nucleus and are involved in the processing of pre messenger RNAs" []
+synonym: " U-RNA" EXACT []
+synonym: "small nuclear RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Small_nuclear_RNA
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000043
+name: snoRNA
+def: "Small RNA molecules that are found in the cell nucleolus and are involved in the post-transcriptional modification of other RNAs." []
+synonym: "small nucleolar RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Small_nucleolar_RNA
+xref: SO:0001272
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000044
+name: tRNA
+def: "A transfer RNA, which acts as an adaptor molecule for translation of mRNA." []
+synonym: "transfer RNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Transfer_RNA
+xref: SO:0001272
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000045
+name: vaultRNA
+def: "Short non coding RNA genes that form part of the vault ribonucleoprotein complex." []
+xref: https://en.wikipedia.org/wiki/Vault_RNA
+xref: SO:0000404
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000046
+name: miscRNA
+def: "Miscellaneous RNA. A non-coding RNA that cannot be classified." []
+is_a: ENSGLOSSARY:0000037 ! ncRNA
+
+[Term]
+id: ENSGLOSSARY:0000047
+name: Pseudogene
+def: "A gene that has homology to known protein-coding genes but contain a frameshift and/or stop codon(s) which disrupts the ORF. Thought to have arisen through duplication followed by loss of function." []
+xref: https://en.wikipedia.org/wiki/Pseudogene
+xref: SO:0000336
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000048
+name: Processed pseudogene
+def: "Pseudogene that lack introns and is thought to arise from reverse transcription of mRNA followed by reinsertion of DNA into the genome." []
+xref: https://en.wikipedia.org/wiki/Pseudogene#Processed
+xref: SO:0000043
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000049
+name: Unprocessed pseudogene
+def: "Pseudogene that can contain introns since produced by gene duplication." []
+synonym: "Non-processed pseudogene" EXACT []
+xref: https://en.wikipedia.org/wiki/Pseudogene#Non-processed
+xref: SO:0001760
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000050
+name: Transcribed pseudogene
+def: "Pseudogene where protein homology or genomic structure indicates a pseudogene, but the presence of locus-specific transcripts indicates expression. These can be classified into 'Processed', 'Unprocessed' and 'Unitary'." []
+xref: SO:0002109\, SO\:0002107\, SO\:0002108
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000051
+name: Translated pseudogene
+def: "Pseudogenes that have mass spec data suggesting that they are also translated. These can be classified into 'Processed', 'Unprocessed'" []
+xref: SO:0002105\, SO\:0002106
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000052
+name: Polymorphic pseudogene
+def: "Pseudogene owing to a SNP/indel but in other individuals/haplotypes/strains the gene is translated." []
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000053
+name: Unitary pseudogene
+def: "A species specific unprocessed pseudogene without a parent gene, as it has an active orthologue in another species." []
+xref: https://en.wikipedia.org/wiki/Pseudogene#Unitary_pseudogenes
+xref: SO:0001759
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000054
+name: IG pseudogene
+def: "Inactivated immunoglobulin gene." []
+is_a: ENSGLOSSARY:0000047 ! Pseudogene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000055
+name: IG gene
+def: "Immunoglobulin gene that undergoes somatic recombination, annotated in collaboration with IMGT http://www.imgt.org/." []
+synonym: "Immunoglobulin gene" EXACT []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002122
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation "http://www.ensembl.org/info/genome/genebuild/biotypes.html, http://www.ensembl.org/info/genome/genebuild/ig_tcr.html" xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000056
+name: TR gene
+def: "T cell receptor gene that undergoes somatic recombination, annotated in collaboration with IMGT http://www.imgt.org/." []
+synonym: "T cell receptor gene" EXACT []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002133
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation "http://www.ensembl.org/info/genome/genebuild/biotypes.html, http://www.ensembl.org/info/genome/genebuild/ig_tcr.html" xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000057
+name: TEC (To be Experimentally Confirmed)
+def: "Regions with EST clusters that have polyA features that could indicate the presence of protein coding genes. These require experimental validation, either by 5' RACE or RT-PCR to extend the transcripts, or by confirming expression of the putatively-encoded peptide with specific antibodies." []
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000058
+name: Readthrough
+def: "A readthrough transcript has exons that overlap exons from transcripts belonging to two or more different loci (in addition to the locus to which the readthrough transcript itself belongs)." []
+synonym: "read-through" EXACT []
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000059
+name: IG V gene
+def: "Variable chain immunoglobulin gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002126
+is_a: ENSGLOSSARY:0000055 ! IG gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000060
+name: IG D gene
+def: "Diversity chain immunoglobulin gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002124
+is_a: ENSGLOSSARY:0000055 ! IG gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000061
+name: IG J gene
+def: "Joining chain immunoglobulin gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002125
+is_a: ENSGLOSSARY:0000055 ! IG gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000062
+name: IG C gene
+def: "Constant chain immunoglobulin gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002123
+is_a: ENSGLOSSARY:0000055 ! IG gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000063
+name: TR V gene
+def: "Variable chain T cell receptor gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002137
+is_a: ENSGLOSSARY:0000056 ! TR gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000064
+name: TR D gene
+def: "Diversity chain T cell receptor gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002135
+is_a: ENSGLOSSARY:0000056 ! TR gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000065
+name: TR J gene
+def: "Joining chain T cell receptor gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002136
+is_a: ENSGLOSSARY:0000056 ! TR gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000066
+name: TR C gene
+def: "Constant chain T cell receptor gene that undergoes somatic recombination before transcription" []
+xref: https://en.wikipedia.org/wiki/V(D)J_recombination
+xref: SO:0002134
+is_a: ENSGLOSSARY:0000056 ! TR gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000067
+name: cDNA
+def: "The sequence of the spliced exons of a transcript expressed in DNA notation (T rather than U), representing the coding or sense strand. The cDNA contains the whole sequence of the RNA, including coding and untranslated sequence." []
+synonym: "complementary DNA" EXACT []
+xref: https://en.wikipedia.org/wiki/Complementary_DNA
+xref: SO:0000756
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000068
+name: CDS
+def: "CoDing Sequence. The region of a cDNA which is translated. In Ensembl displays, the stop codon is included as part of the CDS sequence." []
+synonym: " open reading frame" EXACT []
+synonym: " ORF" EXACT []
+synonym: " translatable sequence" EXACT []
+synonym: " translated sequence" EXACT []
+synonym: "coding sequence" EXACT []
+xref: SO:0000316
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000069
+name: Peptide
+def: "A sequence of amino acids, translated from a CDS." []
+synonym: " Translation" EXACT []
+synonym: "Protein" EXACT []
+xref: https://en.wikipedia.org/wiki/Peptide
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000070
+name: Protein domain
+def: "A region of special biological interest within a single protein sequence. However, a domain may also be defined as a region within the three-dimensional structure of a protein that may encompass regions of several distinct protein sequences that accomplishes a specific function. A domain class is a group of domains that share a common set of well-defined properties or characteristics." []
+synonym: "Domain" EXACT []
+xref: https://en.wikipedia.org/wiki/Protein_domain
+is_a: ENSGLOSSARY:0000069 ! Peptide
+
+[Term]
+id: ENSGLOSSARY:0000071
+name: Exon
+def: "Transcribed genomic region that remains in the RNA after splicing, includes both the CDS and the UTRs." []
+xref: https://en.wikipedia.org/wiki/Exon
+xref: SO:0000147
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000072
+name: Intron
+def: "Transcribed genomic regions that is removed from the RNA by splicing." []
+xref: https://en.wikipedia.org/wiki/Intron
+xref: SO:0000188
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000073
+name: Codon
+def: "Three base pairs in either DNA or RNA that code for an amino acid (or stop translation)." []
+xref: https://en.wikipedia.org/wiki/Genetic_code
+xref: SO:0000360
+is_a: ENSGLOSSARY:0000068 ! CDS
+
+[Term]
+id: ENSGLOSSARY:0000074
+name: Constitutive exon
+def: "Exons that are not spliced out, therefore present in all transcripts of a given gene." []
+is_a: ENSGLOSSARY:0000071 ! Exon
+
+[Term]
+id: ENSGLOSSARY:0000075
+name: Phase
+def: "The position of an exon/intron boundary within a codon. A phase of zero means the boundary falls between codons, one means between the first and second base and two means between the second and third base. Exons have a start and end phase, whereas introns have just one phase. A boundary in a non-coding region has a phase of -1." []
+is_a: ENSGLOSSARY:0000071 ! Exon
+
+[Term]
+id: ENSGLOSSARY:0000076
+name: Flanking sequence
+def: "Sequence 5' or 3' to a DNA or RNA sequence of interest (for example gene, transcript, SNP or repeat)." []
+synonym: " flank" EXACT []
+synonym: "flanking region" EXACT []
+xref: SO:0000239
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+
+[Term]
+id: ENSGLOSSARY:0000077
+name: Untranslated region
+def: "The region of a coding cDNA which is not translated." []
+synonym: "UTR" EXACT []
+xref: https://en.wikipedia.org/wiki/Untranslated_region
+xref: SO:0000203
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000078
+name: 5' UTR
+def: "The region of a coding cDNA upstream of the start codon which is not translated." []
+synonym: " 5' untranslated region" EXACT []
+synonym: " five prime untranslated region" EXACT []
+synonym: "five prime UTR" EXACT []
+xref: https://en.wikipedia.org/wiki/Untranslated_region
+xref: SO:0000204
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000079
+name: 3' UTR
+def: "The region of a coding cDNA downstream of the stop codon which is not translated." []
+synonym: " 3' untranslated region" EXACT []
+synonym: " three prime untranslated region" EXACT []
+synonym: "three prime UTR" EXACT []
+xref: https://en.wikipedia.org/wiki/Untranslated_region
+xref: SO:0000205
+is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000080
+name: Homologues
+def: "Specific genes that are descended from the same common sequence in an ancestor." []
+synonym: "Homologs" EXACT []
+xref: https://en.wikipedia.org/wiki/Sequence_homology
+xref: SO:0000853\, FHOM_0000007
+is_a: ENSGLOSSARY:0000002 ! Gene
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000081
+name: Gene tree
+def: "A representation of the evolutionary relationship between homologues, constructed using the Ensembl gene tree pipeline." []
+synonym: "Protein tree" EXACT []
+xref:  https://en.wikipedia.org/wiki/Phylogenetic_tree
+is_a: ENSGLOSSARY:0000080 ! Homologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000082
+name: Orthologues
+def: "Orthologues are genes derived from a common ancestor through vertical descent (or speciation) and can be thought of as the direct evolutionary counterpart." []
+synonym: "Orthologs" EXACT []
+xref: FHOM_0000017
+xref: https://en.wikipedia.org/wiki/Sequence_homology#Orthology
+is_a: ENSGLOSSARY:0000080 ! Homologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000083
 name: 1-to-1 orthologues
 def: "A type of orthologue assigned for a pair of species where only one copy is found in each species." []
 synonym: " one-to-one orthologs" EXACT []
 synonym: " one-to-one orthologues" EXACT []
 synonym: "1-to-1 orthologs" EXACT []
-xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
-is_a: ENSGLOSSARY:0000002 ! Orthologues
+xref: FHOM_0000020
+is_a: ENSGLOSSARY:0000082 ! Orthologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000004
+id: ENSGLOSSARY:0000084
 name: 1-to-many orthologues
 def: "A type of orthologue assigned for a pair of species where one gene in one species is orthologous to multiple genes in the other species, due to (a) duplication event(s) in the second species." []
 synonym: " one-to-many orthologs" EXACT []
 synonym: " one-to-many orthologues" EXACT []
 synonym: "1-to-many orthologs" EXACT []
-xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
-is_a: ENSGLOSSARY:0000002 ! Orthologues
+xref: FHOM_0000034
+is_a: ENSGLOSSARY:0000082 ! Orthologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000005
+id: ENSGLOSSARY:0000085
 name: Many-to-many orthologues
 def: "A type of orthologue assigned for a pair of species where multiple orthologues are found in both species, where the duplication events in both species occurred after the speciation event." []
 synonym: "many-to-many orthologs" EXACT []
-xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
-is_a: ENSGLOSSARY:0000002 ! Orthologues
+xref: FHOM_0000048
+is_a: ENSGLOSSARY:0000082 ! Orthologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000006
-name: Apparent orthologues
-def: "Apparent orthologues occur when genes in different species have homology to one another, but we have reason to believe that they are not directly orthologous to each other. For example, this may occur when there has been a gene duplication but in both species we only have one gene. This may be due to gaps in the genome assemblies, gene deletions or degradation to pseudogenes. These genes are actually between species paralogues, but based on our data we cannot say for certain that the two genes are not orthologues that have significantly diverged." []
-synonym: "Apparent orthologs" EXACT []
-xref: http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types
-is_a: ENSGLOSSARY:0000002 ! Orthologues
-
-[Term]
-id: ENSGLOSSARY:0000007
+id: ENSGLOSSARY:0000086
 name: Paralogues
-def: "Sequences (homologues) that have evolved by duplication." []
+def: "Genes (homologues) that have evolved by duplication." []
 synonym: "Paralogs" EXACT []
+xref: FHOM_0000011
 xref: https://en.wikipedia.org/wiki/Sequence_homology#Paralogy
-is_a: ENSGLOSSARY:0000001 ! Homologues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+is_a: ENSGLOSSARY:0000080 ! Homologues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000008
+id: ENSGLOSSARY:0000087
 name: Between species paralogues
 def: "Members of the same gene family in different species that are not direct orthologues. In a gene tree, these genes are separated by a duplication node." []
 synonym: " out paralogs" EXACT []
 synonym: " out paralogues" EXACT []
 synonym: "Between species paralogs" EXACT []
-is_a: ENSGLOSSARY:0000007 ! Paralogues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+xref: FHOM_0000050
+is_a: ENSGLOSSARY:0000086 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000009
-name: Contiguous gene split
-def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments of the gene are within 1Mb of each other on the same chromosome strand." []
-is_a: ENSGLOSSARY:0000007 ! Paralogues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+id: ENSGLOSSARY:0000088
+name: Gene split
+def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along." []
+is_a: ENSGLOSSARY:0000086 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000010
+id: ENSGLOSSARY:0000089
 name: Other paralogues
 def: "Paralogues which are very far away from the other members of a paralogue family. They are part of the same super-family, but the precise taxonomic relationship to other members is undefined, as the trees are too large to compute." []
 synonym: "Other paralogs" EXACT []
-is_a: ENSGLOSSARY:0000007 ! Paralogues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+is_a: ENSGLOSSARY:0000086 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000011
-name: Putative gene split
-def: "Pairs of genes in a species that occur together in the same tree, but are actually two halves of the same gene split partway along, where the fragments are more than 1Mb apart, or on different chromosomes or strands." []
-is_a: ENSGLOSSARY:0000007 ! Paralogues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
-
-[Term]
-id: ENSGLOSSARY:0000012
+id: ENSGLOSSARY:0000090
 name: Within species paralogues
 def: "Two or more versions of a duplicated gene in a single species. In a gene tree, the genes are separated by a duplication node." []
-synonym: " in paralogs" EXACT []
-synonym: " in paralogues" EXACT []
+synonym: " In paralogs" EXACT []
+synonym: " In paralogues" EXACT []
 synonym: "Within species paralogs" EXACT []
-is_a: ENSGLOSSARY:0000007 ! Paralogues
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html#homology_types xsd:string
+xref: FHOM_0000049
+is_a: ENSGLOSSARY:0000086 ! Paralogues
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homologue_types.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000091
+name: Homoeologues
+def: "Pairs of genes in a polyploid genome that underwent (a) hybridisation event(s). The original genes were orthologues in the two (or more) species that hybridised, and now occur in the same species. Since they did not arise through a duplication event, they are not paralogues." []
+xref: FHOM_0000073
+xref: https://en.wikipedia.org/wiki/Polyploid#Homoeologous
+is_a: ENSGLOSSARY:0000080 ! Homologues
+
+[Term]
+id: ENSGLOSSARY:0000092
+name: Variant
+def: "Locus where the sequence differs between individuals of the same species" []
+synonym: " mutation" EXACT []
+synonym: " variation" EXACT []
+synonym: "Polymorphism" EXACT []
+xref: https://en.wikipedia.org/wiki/Genetic_variation
+xref: SO:0001060
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000093
+name: QTL
+def: "Genetic loci where allelic variation is associated with variation in a quantitative trait (e.g. blood pressure)." []
+synonym: "Quantitative trait locus" EXACT []
+xref: https://en.wikipedia.org/wiki/Quantitative_trait_locus
+xref: SO:0000771
+is_a: ENSGLOSSARY:0000092 ! Variant
+
+[Term]
+id: ENSGLOSSARY:0000094
+name: eQTL
+def: "Genetic loci where allelic variation is associated with expression levels of other genes." []
+synonym: "Expression quantitative trait locus" EXACT []
+xref: https://en.wikipedia.org/wiki/Expression_quantitative_trait_loci
+is_a: ENSGLOSSARY:0000093 ! QTL
+
+[Term]
+id: ENSGLOSSARY:0000095
+name: Evidence status
+def: "Codes that reflect the amount and type of evidence that supports the existence of a variant." []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#evidence_status xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000096
+name: Sequence variant
+def: "Variant that only affects a small locus" []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000097
+name: Structural variant
+def: "Variant that affects a large locus" []
+xref: SO:0001537
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000098
+name: SNP
+def: "Single Nucleotide Polymorphism, substitution of a single nucleotide for another nucleotide" []
+synonym: " base-pair substitution" EXACT []
+synonym: " point mutation" EXACT []
+synonym: " single nucleotide variation" EXACT []
+synonym: " SNV" EXACT []
+synonym: "Single nucleotide polymorphism" EXACT []
+xref: https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism
+xref: SO:0000694
+is_a: ENSGLOSSARY:0000096 ! Sequence variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000099
+name: Insertion
+def: "Insertion of one or more nucleotides" []
+xref: https://en.wikipedia.org/wiki/Insertion_(genetics)
+xref: SO:0000667
+is_a: ENSGLOSSARY:0000096 ! Sequence variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000100
+name: Deletion
+def: "Deletion of one or more nucleotides" []
+xref: https://en.wikipedia.org/wiki/Deletion_(genetics)
+xref: SO:0000159
+is_a: ENSGLOSSARY:0000096 ! Sequence variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000101
+name: Indel
+def: "An insertion and a deletion, affecting two or more nucleotides" []
+xref: https://en.wikipedia.org/wiki/Indel
+xref: SO:1000032
+is_a: ENSGLOSSARY:0000096 ! Sequence variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000102
+name: Substitution
+def: "A sequence alteration where the length of the deleted sequence is the same as the length of the inserted sequence." []
+xref: SO:1000002
+is_a: ENSGLOSSARY:0000096 ! Sequence variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000103
+name: CNV
+def: "Copy Number Variation: increases or decreases the copy number of a given locus. Subcategorised into Loss and Gain compared to the reference." []
+synonym: " CNP" EXACT []
+synonym: " copy number gain" EXACT []
+synonym: " copy number loss" EXACT []
+synonym: " copy number polymorphism" EXACT []
+synonym: " deletion" EXACT []
+synonym: " duplication" EXACT []
+synonym: "Copy number variation" EXACT []
+xref: https://en.wikipedia.org/wiki/Copy-number_variation
+xref: SO:0001019
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000104
+name: Inversion
+def: "A continuous nucleotide sequence is inverted in the same position" []
+xref: https://en.wikipedia.org/wiki/Chromosomal_inversion
+xref: SO:1000036
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000105
+name: Translocation
+def: "A region of nucleotide sequence that has translocated to a new position" []
+synonym: "chromosome rearrangement" EXACT []
+xref: https://en.wikipedia.org/wiki/Chromosomal_translocation
+xref: SO:0000199
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000106
+name: Allele (variant)
+def: "One of a number of alternative forms of the same genetic locus/variant." []
+xref: SO:0001023
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000107
+name: Allele (gene)
+def: "Different versions of a gene found between the primary assembly and a patch or genome haplotype." []
+synonym: " alternative sequence gene" EXACT []
+synonym: " haplotype gene" EXACT []
+synonym: " patch gene" EXACT []
+synonym: "Alt gene" EXACT []
+is_a: ENSGLOSSARY:0000002 ! Gene
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000106 ! Allele (variant)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000108
+name: Reference allele
+def: "The allele of a variant found in the reference genome currently being studied. The reference allele is not necessarily the major or ancestral allele." []
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+
+[Term]
+id: ENSGLOSSARY:0000109
+name: Alternative allele
+def: "Any allele of a variant which is not the in the reference genome currently being studied. The alternative allele is not necessarily the minor allele." []
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+
+[Term]
+id: ENSGLOSSARY:0000110
+name: Major allele
+def: "The allele which is most frequent in the global population, defined in human by the 1000 Genomes Project. The major allele may be the reference or the alternative allele, and may or may not be the ancestral allele." []
+xref: https://en.wikipedia.org/wiki/Allele_frequency
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#maf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000111
+name: Minor allele
+def: "The allele which is the second most frequent in the global population, defined in human by the 1000 Genomes Project. The minor allele may be the reference or the alternative allele, and may or may not be the ancestral allele." []
+xref: https://en.wikipedia.org/wiki/Allele_frequency
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#maf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000112
+name: Private allele
+def: "An allele which has only been identified in one individual or one family. A private allele may be the reference or the alternative allele, and may or may not be the ancestral allele." []
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+
+[Term]
+id: ENSGLOSSARY:0000113
+name: Ancestral allele
+def: "The allele which occurs at this locus in closely related species and is thought to reflect the allele present at the time of speciation. The ancestral allele may be the reference or the alternative allele, and the major or minor allele." []
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+
+[Term]
+id: ENSGLOSSARY:0000114
+name: Minor allele frequency
+def: "The frequency of the second most common allele in the specified population." []
+synonym: "MAF" EXACT []
+xref: https://en.wikipedia.org/wiki/Allele_frequency
+is_a: ENSGLOSSARY:0000111 ! Minor allele
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#maf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000115
+name: Highest population MAF
+def: "The highest minor allele frequency observed in any population typed for this variant. For human this includes the 1000 Genomes Project, gnomAD and UK10K." []
+synonym: " Highest population minor allele frequency" EXACT []
+synonym: "HPMAF" EXACT []
+xref: https://en.wikipedia.org/wiki/Allele_frequency
+is_a: ENSGLOSSARY:0000114 ! Minor allele frequency
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#maf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000116
+name: Global MAF
+def: "The frequency of the second most common allele in the global population, defined in human by the 1000 Genomes Project phase 3." []
+is_a: ENSGLOSSARY:0000114 ! Minor allele frequency
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#maf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000117
+name: Genotype
+def: "The specific alleles that are present in an individual's genome. In diploid organisms two alleles make up the genotype (except for the sex chromosomes)." []
+synonym: "Zygosity" EXACT []
+is_a: ENSGLOSSARY:0000106 ! Allele (variant)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000118
+name: Genetic marker
+def: "A measurable locus that varies within a population." []
+xref: SO:0001645
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000119
+name: Tandem repeat
+def: "Two or more adjacent copies of a region (of length greater than 1)." []
+xref: SO:0000705
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000120
+name: Alu insertion
+def: "An insertion of sequence from the Alu family of mobile elements." []
+xref: SO:0002063
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000121
+name: Complex structural alteration
+def: "A structural sequence alteration or rearrangement encompassing one or more genome fragments, with four or more breakpoints." []
+xref: SO:0001784
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000122
+name: Complex substitution
+def: "When no simple or well defined DNA mutation event describes the observed DNA change, the keyword \"\"complex\"\" should be used. Usually there are multiple equally plausible explanations for the change." []
+xref: SO:1000005
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000123
+name: Interchromosomal breakpoint
+def: "A rearrangement breakpoint between two different chromosomes." []
+xref: SO:0001873
+is_a: ENSGLOSSARY:0000105 ! Translocation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000124
+name: Interchromosomal translocation
+def: "A translocation where the regions involved are from different chromosomes." []
+xref: SO:0002060
+is_a: ENSGLOSSARY:0000105 ! Translocation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000125
+name: Intrachromosomal breakpoint
+def: "A rearrangement breakpoint within the same chromosome." []
+xref: SO:0001874
+is_a: ENSGLOSSARY:0000105 ! Translocation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000126
+name: Intrachromosomal translocation
+def: "A translocation where the regions involved are from the same chromosome." []
+xref: SO:0002061
+is_a: ENSGLOSSARY:0000105 ! Translocation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000127
+name: Loss of heterozygosity
+def: "A functional variant whereby the sequence alteration causes a loss of function of one allele of a gene." []
+xref: SO:0001786
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000128
+name: Mobile element deletion
+def: "A deletion of a mobile element when comparing a reference sequence (has mobile element) to a individual sequence (does not have mobile element)." []
+xref: SO:0002066
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000129
+name: Mobile element insertion
+def: "A kind of insertion where the inserted sequence is a mobile element." []
+xref: SO:0001837
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000130
+name: Novel sequence insertion
+def: "An insertion the sequence of which cannot be mapped to the reference genome." []
+xref: SO:0001838
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000131
+name: Short tandem repeat variant
+def: "A variation that expands or contracts a tandem repeat with regard to a reference." []
+xref: SO:0002096
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000132
+name: Tandem duplication
+def: "A duplication consisting of 2 identical adjacent regions." []
+xref: SO:1000173
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000133
+name: Probe
+def: "A DNA sequence used experimentally to detect the presence or absence of a complementary nucleic acid." []
+xref: SO:0000051
+is_a: ENSGLOSSARY:0000097 ! Structural variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000134
+name: Variant consequence
+def: "The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps." []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000135
+name: Variant impact
+def: "A subjective classification of the severity of the variant consequence, based on agreement with SNPEff." []
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000136
+name: High impact variant consequence
+def: "The variant is assumed to have high (disruptive) impact in the protein, probably causing protein truncation, loss of function or triggering nonsense mediated decay." []
+synonym: "HIGH" EXACT []
+is_a: ENSGLOSSARY:0000135 ! Variant impact
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000137
+name: Moderate impact variant consequence
+def: "A non-disruptive variant that might change protein effectiveness." []
+synonym: "MODERATE" EXACT []
+is_a: ENSGLOSSARY:0000135 ! Variant impact
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000138
+name: Low impact variant consequence
+def: "A variant that is assumed to be mostly harmless or unlikely to change protein behaviour." []
+synonym: "LOW" EXACT []
+is_a: ENSGLOSSARY:0000135 ! Variant impact
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000139
+name: Modifier impact variant consequence
+def: "Usually non-coding variants or variants affecting non-coding genes, where predictions are difficult or there is no evidence of impact." []
+synonym: "MODIFIER" EXACT []
+is_a: ENSGLOSSARY:0000135 ! Variant impact
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000140
+name: Transcript ablation
+def: "A feature ablation whereby the deleted region includes a transcript feature" []
+xref: SO:0001893
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000141
+name: Splice acceptor variant
+def: "A splice variant that changes the 2 base region at the 3' end of an intron" []
+xref: SO:0001574
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000142
+name: Splice donor variant
+def: "A splice variant that changes the 2 base region at the 5' end of an intron" []
+xref: SO:0001575
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000143
+name: Stop gained
+def: "A sequence variant whereby at least one base of a codon is changed, resulting in a premature stop codon, leading to a shortened transcript" []
+xref: SO:0001587
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000144
+name: Frameshift variant
+def: "A sequence variant which causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three" []
+xref: SO:0001589
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000145
+name: Stop lost
+def: "A sequence variant where at least one base of the terminator codon (stop) is changed, resulting in an elongated transcript" []
+xref: SO:0001578
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000146
+name: Start lost
+def: "A codon variant that changes at least one base of the canonical start codo" []
+xref: SO:0002012
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000147
+name: Transcript amplification
+def: "A feature amplification of a region containing a transcript" []
+xref: SO:0001889
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000148
+name: Inframe insertion
+def: "An inframe non synonymous variant that inserts bases into in the coding sequenc" []
+xref: SO:0001821
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000149
+name: Inframe deletion
+def: "An inframe non synonymous variant that deletes bases from the coding sequenc" []
+xref: SO:0001822
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000150
+name: Missense variant
+def: "A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved" []
+xref: SO:0001583
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000151
+name: Protein altering variant
+def: "A sequence_variant which is predicted to change the protein encoded in the coding sequence" []
+xref: SO:0001818
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000152
+name: Splice region variant
+def: "A sequence variant in which a change has occurred within the region of the splice site, either within 1-3 bases of the exon or 3-8 bases of the intron" []
+xref: SO:0001630
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000153
+name: Incomplete terminal codon variant
+def: "A sequence variant where at least one base of the final codon of an incompletely annotated transcript is changed" []
+xref: SO:0001626
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000154
+name: Stop retained variant
+def: "A sequence variant where at least one base in the terminator codon is changed, but the terminator remains" []
+xref: SO:0001567
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000155
+name: Synonymous variant
+def: "A sequence variant where there is no resulting change to the encoded amino acid" []
+xref: SO:0001819
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000156
+name: Coding sequence variant
+def: "A sequence variant that changes the coding sequence" []
+xref: SO:0001580
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000157
+name: Mature miRNA variant
+def: "A transcript variant located with the sequence of the mature miRNA" []
+xref: SO:0001620
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000158
+name: 5 prime UTR variant
+def: "A UTR variant of the 5' UTR" []
+xref: SO:0001623
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000159
+name: 3 prime UTR variant
+def: "A UTR variant of the 3' UTR" []
+xref: SO:0001624
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000160
+name: Non coding transcript exon variant
+def: "A sequence variant that changes non-coding exon sequence in a non-coding transcript" []
+xref: SO:0001792
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000161
+name: Intron variant
+def: "A transcript variant occurring within an intron" []
+xref: SO:0001627
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000162
+name: NMD transcript variant
+def: "A variant in a transcript that is the target of NMD" []
+xref: SO:0001621
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000163
+name: Non coding transcript variant
+def: "A transcript variant of a non coding RNA gene" []
+xref: SO:0001619
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000164
+name: Upstream gene variant
+def: "A sequence variant located 5' of a gene" []
+xref: SO:0001631
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000165
+name: Downstream gene variant
+def: "A sequence variant located 3' of a gene" []
+xref: SO:0001632
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000166
+name: TFBS ablation
+def: "A feature ablation whereby the deleted region includes a transcription factor binding site" []
+xref: SO:0001895
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000167
+name: TFBS amplification
+def: "A feature amplification of a region containing a transcription factor binding site" []
+xref: SO:0001892
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000168
+name: TF binding site variant
+def: "A sequence variant located within a transcription factor binding site" []
+xref: SO:0001782
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000169
+name: Regulatory region ablation
+def: "A feature ablation whereby the deleted region includes a regulatory region" []
+xref: SO:0001894
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000170
+name: Regulatory region amplification
+def: "A feature amplification of a region containing a regulatory region" []
+xref: SO:0001891
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000171
+name: Feature elongation
+def: "A sequence variant located within a regulatory region" []
+xref: SO:0001907
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000172
+name: Regulatory region variant
+def: "A sequence variant located within a regulatory region" []
+xref: SO:0001566
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000173
+name: Feature truncation
+def: "A sequence variant that causes the reduction of a genomic feature, with regard to the reference sequence" []
+xref: SO:0001906
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000174
+name: Intergenic variant
+def: "A sequence variant located in the intergenic region, between genes" []
+xref: SO:0001628
+is_a: ENSGLOSSARY:0000134 ! Variant consequence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000175
+name: Ambiguity code
+def: "A single letter code that represents two or more possible nucleotides at a single base locus." []
+xref: https://en.wikipedia.org/wiki/International_Union_of_Pure_and_Applied_Chemistry#Amino_acid_and_nucleotide_base_codes
+is_a: ENSGLOSSARY:0000092 ! Variant
+
+[Term]
+id: ENSGLOSSARY:0000176
+name: Flagged variant
+def: "Variants that failed our quality control analyses, therefore they are flagged as suspicious." []
+synonym: "Failed variant" EXACT []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#quality_control xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000177
+name: Clinical significance
+def: "A classification of a variant's impact on disease, taken from ClinVar." []
+synonym: " pathogenicity" EXACT []
+synonym: "Clin sig" EXACT []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/data_description.html#clin_significance xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000178
+name: Linkage disequilibrium
+def: "A measure of how often two variants or specific sequences are inherited together." []
+synonym: " Linkage" EXACT []
+synonym: "LD" EXACT []
+is_a: ENSGLOSSARY:0000092 ! Variant
+property_value: http://ensembl.org/glossary/property/documentation https://en.wikipedia.org/wiki/Linkage_disequilibrium xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000179
+name: r2
+def: "The correlation between a pair of loci. It varies from 0 (loci are in complete linkage equilibrium) to 1 (loci are in complete linkage disequilibrium and coinherited)." []
+synonym: "r squared" EXACT []
+is_a: ENSGLOSSARY:0000178 ! Linkage disequilibrium
+property_value: http://ensembl.org/glossary/property/documentation https://en.wikipedia.org/wiki/Linkage_disequilibrium xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000180
+name: D'
+def: "The difference between the observed and the expected frequency of a given haplotype. If two loci are independent (i.e. in linkage equilibrium and therefore not coinherited at all), the D' value will be 0." []
+synonym: "D prime" EXACT []
+is_a: ENSGLOSSARY:0000178 ! Linkage disequilibrium
+property_value: http://ensembl.org/glossary/property/documentation https://en.wikipedia.org/wiki/Linkage_disequilibrium xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000181
+name: Haplotype (variation)
+def: "A set of variant alleles in a contiguous genomic region. A haplotype block describes a set of alleles which tend to be inherited together." []
+xref: SO:0001024
+is_a: ENSGLOSSARY:0000178 ! Linkage disequilibrium
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000189 ! Haplotype (genome)
+property_value: http://ensembl.org/glossary/property/documentation https://en.wikipedia.org/wiki/Linkage_disequilibrium xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000182
+name: Transcript haplotype
+def: "The transcript sequence derived from one copy of a gene in an individual, based on the phased 1000 Genomes genotype data. CDS and protein sequences are derived from this." []
+is_a: ENSGLOSSARY:0000181 ! Haplotype (variation)
+
+[Term]
+id: ENSGLOSSARY:0000183
+name: Genome
+def: "The complete set of DNA found in each cell." []
+xref: https://en.wikipedia.org/wiki/Genome
+
+[Term]
+id: ENSGLOSSARY:0000184
+name: Genome assembly
+def: "A computational representation of the sequence of a haploid genome, representative of a species or strain." []
+synonym: " reference assembly" EXACT []
+synonym: "assembly" EXACT []
+xref: https://en.wikipedia.org/wiki/Sequence_assembly
+xref: SO:0000353
+is_a: ENSGLOSSARY:0000183 ! Genome
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000185
+name: Coverage
+def: "Refers to the number of overlapping sequences used to build a region of the assembly. High coverage indicates a good amount of sequence information while low coverage reflects a low amount of sequence information." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000186
+name: Primary assembly
+def: "The underlying genome sequence, without alternative sequence included." []
+synonym: "reference sequence" EXACT []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000187
+name: Alternative sequence
+def: "Genomic sequence that differs from the genomic DNA on the primary assembly. These are represented as sequence on top of the primary assembly. Provided by the GRC for human and mouse." []
+synonym: "non-reference sequence" EXACT []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000188
+name: Patch
+def: "New sequences that have been added to the genome assembly since its release. There are two types: fix and nove patches." []
+is_a: ENSGLOSSARY:0000187 ! Alternative sequence
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000189
+name: Haplotype (genome)
+def: "Known variations to the primary assembly, due to variability in the human genome sequence (eg. the highly variable MHC locus). These were included as part of the genome assembly when it was first produced." []
+xref: https://en.wikipedia.org/wiki/Major_histocompatibility_complex
+is_a: ENSGLOSSARY:0000187 ! Alternative sequence
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000181 ! Haplotype (variation)
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000190
+name: Novel patch
+def: "Novel patches represent new allelic loci. They can usually be considered as similar to haplotypes and are likely to be reclassified as such in the next genome assembly, but not necessarily." []
+is_a: ENSGLOSSARY:0000188 ! Patch
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000191
+name: Fix patch
+def: "Fix patches are where the primary assembly was found to be incorrect, and the patch reflects the corrected sequence." []
+is_a: ENSGLOSSARY:0000188 ! Patch
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000192
+name: Contig
+def: "A contig is a contiguous stretch of DNA sequence without gaps that has been assembled solely based on direct sequencing information." []
+xref: https://en.wikipedia.org/wiki/Contig
+xref: SO:0000149
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000193
+name: Scaffold
+def: "Scaffolds are sets of ordered, oriented contigs, assembled by sequence overlap. They are longer sequences than contigs, but shorter than full chromosomes." []
+synonym: "Supercontig" EXACT []
+xref: SO:0000148
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000194
+name: Cytogenetic band
+def: "A banding pattern on a chromosome resulting from staining and examination by microscopy. These are named in terms of the chromosome arm they are found on, and are often used as a shorthand for describing the location of genomic features." []
+synonym: " cytogenetic map" EXACT []
+synonym: "chromosome band" EXACT []
+xref: https://en.wikipedia.org/wiki/Cytogenetics
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+
+[Term]
+id: ENSGLOSSARY:0000195
+name: Clone
+def: "A segment of DNA that has been inserted into a vector molecule, such as a plasmid, and then replicated to form many identical copies." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+
+[Term]
+id: ENSGLOSSARY:0000196
+name: BAC
+def: "A vector used to clone DNA fragments (100 to 300-kb insert size; average, 150 kb) from another species so that it can be replicated in bacteria. Many genomes (such as human) were sequenced by cloning segments into BACs, amplifying and sequencing the clones." []
+synonym: "Bacterial artificial chromosome" EXACT []
+xref: https://en.wikipedia.org/wiki/Bacterial_artificial_chromosome
+is_a: ENSGLOSSARY:0000195 ! Clone
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000197
+name: YAC
+def: "Originated from a bacterial plasmid, a YAC contains a yeast centromeric region, a yeast origin of DNA replication, a cluster of unique rectriction sites and a selectable marker and a telomere region at the en of each arm. YACs are capable of cloning extremely large segments of DNA (over 1 megabase long) into a host cell, where the DNA is propagated along with the other chromosomes of the yeast cell." []
+synonym: "Yeast artificial chromosome" EXACT []
+xref: https://en.wikipedia.org/wiki/Yeast_artificial_chromosome
+is_a: ENSGLOSSARY:0000195 ! Clone
+
+[Term]
+id: ENSGLOSSARY:0000198
+name: Cosmid
+def: "DNA from a bacterial virus spliced with a small fragment of a genome (up to 50 kb) to be amplified and sequenced." []
+xref: https://en.wikipedia.org/wiki/Cosmid
+is_a: ENSGLOSSARY:0000195 ! Clone
+
+[Term]
+id: ENSGLOSSARY:0000199
+name: Base pairs (genome size)
+def: "The actual number of bases of sequence we have for a full genome assembly, including alternative sequences and PARs, excluding gaps." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+
+[Term]
+id: ENSGLOSSARY:0000200
+name: Golden path (genome size)
+def: "The golden path is the length of the non-redundant reference assembly. It excludes alternative sequences and PARs, but includes the estimated size of the gaps." []
+xref: SO:0000688
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+
+[Term]
+id: ENSGLOSSARY:0000201
+name: Coordinate system
+def: "Which level of the assembly we are working on." []
+synonym: "coord_system" EXACT []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000202
+name: Karyotype
+def: "The number of chromosomes of a genome." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+
+[Term]
+id: ENSGLOSSARY:0000203
+name: PAR
+def: "Small regions of sequence identity located at the tips of the short and the long arms of the X and Y chromosomes where recombination and genetic exchange take place. Genes within the pseudoautosomal region are not sex linked." []
+synonym: "pseudoautosomal region" EXACT []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/human_PARS.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000204
+name: Slice
+def: "The term \"slice\" in Ensembl refers to a length of DNA sequence. A slice can be any length, from one base long to the entire length of a chromosome." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/docs/api/core/core_tutorial.html#slices xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000205
+name: Toplevel
+def: "The largest continuous sequence for an organism. The official technical definition for toplevel sequences are 'sequence regions in the genome assembly that are not a component of another sequence region'. For example, when a genome is assembled into chromosomes, toplevel sequences will be chromosomes and unplaced scaffolds. If a genome has only been assembled into scaffolds, then toplevel sequences are scaffolds and unplaced contigs." []
+is_a: ENSGLOSSARY:0000184 ! Genome assembly
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000206
+name: Placed scaffold
+def: "A scaffold that can be positioned on a chromosome based on genetic mapping information." []
+is_a: ENSGLOSSARY:0000193 ! Scaffold
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000207
+name: Unplaced scaffold
+def: "A scaffold that cannot be positioned on a chromosome." []
+synonym: " unassigned supercontig" EXACT []
+synonym: " unplaced supercontig" EXACT []
+synonym: "Unassigned scaffold" EXACT []
+xref: SO:0001875
+is_a: ENSGLOSSARY:0000193 ! Scaffold
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/genebuild/chromosomes_scaffolds_contigs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000208
+name: Ensembl sources
+def: "Publicly available database that Ensembl imports data from." []
+
+[Term]
+id: ENSGLOSSARY:0000209
+name: Gene source database
+def: "Database from which Ensembl imports cDNA or protein sequence for gene annotation, or gene names." []
+is_a: ENSGLOSSARY:0000208 ! Ensembl sources
+
+[Term]
+id: ENSGLOSSARY:0000210
+name: GENCODE
+def: "The aim of GENCODE as a sub-project of the ENCODE scale-up project is to annotate all evidence-based gene features in the entire human and mouse genomes at a high accuracy. The GENCODE gene set is the default geneset in Ensembl and is equivalent to the Ensembl/HAVANA merged genes. https://www.gencodegenes.org/" []
+xref: https://en.wikipedia.org/wiki/GENCODE
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_merge.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000211
+name: RefSeq
+def: "NCBI's Reference Sequences (RefSeq) database is a curated database of Genbank's genomes, mRNAs and proteins. RefSeq attempts to provide a comprehensive, integrated, non-redundant set of sequences, including genomic DNA, tRNA, and protein products. https://www.ncbi.nlm.nih.gov/refseq/" []
+xref: https://en.wikipedia.org/wiki/RefSeq
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000212
+name: UniProt
+def: "Database of protein sequence and functional information, based at European Bioinformatics Institute (EMBL-EBI), the SIB Swiss Institute of Bioinformatics and the Protein Information Resource (PIR). These sequences are used as evidence for annotating Ensembl genes. http://www.uniprot.org/" []
+synonym: " UniProt Knowledgebase" EXACT []
+synonym: "UniProtKB" EXACT []
+xref: https://en.wikipedia.org/wiki/UniProt
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000213
+name: IMGT
+def: "International ImMunoGeneTics information system. Database of immunoglobulin and T-cell receptor annotation. We collaborate with IMGT on manual annotation of somatically recombined genes. http://www.imgt.org/" []
+synonym: " ImMunoGeneTics" EXACT []
+synonym: "International ImMunoGeneTics information system" EXACT []
+xref: https://en.wikipedia.org/wiki/HLA_Informatics_Group
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/ig_tcr.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000214
+name: SwissProt
+def: "UniProt/Swiss-Prot is a curated protein sequence database that provides a high level of annotation, a minimal level of redundancy and high level of integration with other databases. These sequences are used as evidence for annotating Ensembl genes." []
+synonym: "UniProt/SwissProt" EXACT []
+xref: https://en.wikipedia.org/wiki/UniProt#UniProtKB/Swiss-Prot
+is_a: ENSGLOSSARY:0000212 ! UniProt
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000215
+name: TrEMBL
+def: "A subset of TrEMBL (Translated EMBL database) containing the computer-annotated protein translations of all coding sequences (CDS) present in the ENA (formerly EMBL-bank) that are not yet incorporated into the UniProt/SwissProt database. These sequences are used as evidence for annotating Ensembl genes." []
+synonym: "UniProt/TrEMBL" EXACT []
+xref: https://en.wikipedia.org/wiki/UniProt#UniProtKB/TrEMBL
+is_a: ENSGLOSSARY:0000212 ! UniProt
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000216
+name: INSDC
+def: "An international consortium between the ENA, GenBank and DDBJ to share submissions of nucleotide sequence. These sequences are used as evidence for annotating Ensembl genes. http://www.insdc.org/" []
+synonym: "International Nucleotide Sequence Database Collaboration" EXACT []
+xref: https://en.wikipedia.org/wiki/International_Nucleotide_Sequence_Database_Collaboration
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000217
+name: ENA
+def: "Europe's primary nucleotide sequence resource. The main sources of the DNA and RNA sequences in the database are submissions from individual researchers, genome sequencing projects and patent applications. https://www.ebi.ac.uk/ena" []
+synonym: "European Nucleotide Archive" EXACT []
+xref: https://en.wikipedia.org/wiki/European_Nucleotide_Archive
+is_a: ENSGLOSSARY:0000216 ! INSDC
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000218
+name: GenBank (database)
+def: "The US branch of INSDC. https://www.ncbi.nlm.nih.gov/genbank/" []
+xref: https://en.wikipedia.org/wiki/GenBank
+is_a: ENSGLOSSARY:0000216 ! INSDC
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000291 ! GenBank (file format)
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000219
+name: DDBJ
+def: "The Asian branch of INSDC. http://www.ddbj.nig.ac.jp/" []
+synonym: "DNA Data Bank of Japan" EXACT []
+xref: https://en.wikipedia.org/wiki/DNA_Data_Bank_of_Japan
+is_a: ENSGLOSSARY:0000216 ! INSDC
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000220
+name: Gene Ontology
+def: "An organised hierarchy of terms produced by the Gene Ontology Consortium, used to describe the function of proteins. GO terms are split into three subcategories: biological processes (what the protein does), cellular component (where in the cell the protein is found), and molecular function (how the protein acts). http://www.geneontology.org/" []
+synonym: " GO terms" EXACT []
+synonym: "GO" EXACT []
+xref: https://en.wikipedia.org/wiki/Gene_ontology
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+
+[Term]
+id: ENSGLOSSARY:0000221
+name: HGNC
+def: "HGNC is responsible for approving unique symbols and names for human loci, including protein coding genes, ncRNA genes and pseudogenes, to allow unambiguous scientific communication. HGNC gene names are used for Ensembl human genes, where available, and for orthologous genes in other species. https://www.genenames.org/" []
+synonym: "HUGO gene nomenclature committee" EXACT []
+xref: https://en.wikipedia.org/wiki/HUGO_Gene_Nomenclature_Committee
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/gene_names.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000222
+name: Rfam
+def: "The Rfam database is a collection of RNA families, each represented by multiple sequence alignments, consensus secondary structures and covariance models (CMs). These sequences are used as evidence for annotating Ensembl non-coding genes. http://rfam.xfam.org/" []
+xref: https://en.wikipedia.org/wiki/Rfam
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000223
+name: miRbase
+def: "The miRBase database is a searchable database of published miRNA sequences and annotation. These sequences are used as evidence for annotating Ensembl miRNA genes. http://www.mirbase.org/" []
+xref: https://en.wikipedia.org/wiki/MiRBase
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/annotation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000224
+name: MGI
+def: "MGI is the international database resource for the laboratory mouse, providing integrated genetic, genomic, and biological data to facilitate the study of human health and disease. MGI gene names are used for Ensembl mouse genes, where available. http://www.informatics.jax.org/" []
+synonym: "Mouse genome informatics" EXACT []
+xref: https://en.wikipedia.org/wiki/Mouse_Genome_Informatics
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/gene_names.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000225
+name: zFIN
+def: "An online biological database of information about the zebrafish (Danio rerio). zFIN gene names are used for Ensembl zebrafish genes, where available. https://zfin.org/" []
+synonym: "Zebrafish Information Network" EXACT []
+xref: https://en.wikipedia.org/wiki/Zebrafish_Information_Network
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/gene_names.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000226
+name: SGD
+def: "Canonical database for the molecular biology and genetics of Saccharomyces cerevisiae, source of the annotation seen in Ensembl. https://www.yeastgenome.org/" []
+synonym: "Saccharomyces Genome Database" EXACT []
+xref: https://en.wikipedia.org/wiki/Saccharomyces_Genome_Database
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+
+[Term]
+id: ENSGLOSSARY:0000227
+name: UCSC Genome Browser
+def: "A genome browser hosted at the University of California Santa Cruz. Ensembl collaborates with UCSC in projects such as GENCODE, CCDS and TSL. https://genome.ucsc.edu/" []
+synonym: " Genome Browser" EXACT []
+synonym: " University of California Santa Cruz" EXACT []
+synonym: "UCSC" EXACT []
+xref: https://en.wikipedia.org/wiki/UCSC_Genome_Browser
+is_a: ENSGLOSSARY:0000209 ! Gene source database
+
+[Term]
+id: ENSGLOSSARY:0000228
+name: Epigenome source database
+def: "Database from which Ensembl imports ChIP-seq, DNase-seq and other related datasets, which are used in the Ensembl regulatory build." []
+is_a: ENSGLOSSARY:0000208 ! Ensembl sources
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000229
+name: ENCODE
+def: "Project aiming to build a comprehensive parts list of functional elements in the human genome, including elements that act at the protein and RNA levels, and regulatory elements that control cells and circumstances in which a gene is active, by large scale functional analyses of laboratory cell lines. Used as a source for the Ensembl regulatory build. https://www.encodeproject.org/" []
+synonym: "ENCyclopedia Of DNA Elements" EXACT []
+xref: https://en.wikipedia.org/wiki/ENCODE
+is_a: ENSGLOSSARY:0000228 ! Epigenome source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000230
+name: Blueprint Epigenomes
+def: "Project aiming to apply functional genomics analysis on primary cells of the haematopoietic cell lineage from healthy and diseased individuals, to produce lineage-specific epigenomes. Used as a source for the Ensembl regulatory build. http://www.blueprint-epigenome.eu/" []
+is_a: ENSGLOSSARY:0000228 ! Epigenome source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000231
+name: Roadmap Epigenomics
+def: "Project aiming to develop publicly available reference epigenome maps from a variety of cell types. http://www.roadmapepigenomics.org/" []
+xref: https://en.wikipedia.org/wiki/NCBI_Epigenomics#Roadmap_Epigenomics_Project
+is_a: ENSGLOSSARY:0000228 ! Epigenome source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000232
+name: Variation source database
+def: "Database from which Ensembl imports variation data, including loci, sample genotypes, population frequencies and phenotype associations." []
+is_a: ENSGLOSSARY:0000208 ! Ensembl sources
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000233
+name: dbSNP
+def: "The Single Nucleotide Polymorphism database (dbSNP) is a public-domain archive for a broad collection of simple (short) genetic polymorphisms in human, maintained by NCBI. https://www.ncbi.nlm.nih.gov/projects/SNP/" []
+synonym: "Single Nucleotide Polymorphism database" EXACT []
+xref: https://en.wikipedia.org/wiki/DbSNP
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000234
+name: EVA
+def: "The European Variation Archive is an open-access database of all types of genetic variation data from all species. https://www.ebi.ac.uk/eva/" []
+synonym: "European Variation Archive" EXACT []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000235
+name: dbVar
+def: "dbVar is NCBI's database of human genomic structural variation — insertions, deletions, duplications, inversions, mobile elements, and translocations. https://www.ncbi.nlm.nih.gov/dbvar/" []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000236
+name: DGVa
+def: "The Database of Genomic Variants archive (DGVa) is a repository that provides archiving, accessioning and distribution of publicly available genomic structural variants, in all species.https://www.ebi.ac.uk/dgva" []
+synonym: "Database of Genomic Variants archive" EXACT []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000237
+name: 1000 Genomes project
+def: "The goal of the 1000 Genomes Project was to find most genetic variants with frequencies of at least 1% in the human populations studied. Ensembl display sample genotypes and population frequencies from the 1000 Genomes project. http://www.internationalgenome.org/" []
+synonym: " 1000G" EXACT []
+synonym: "1kG" EXACT []
+xref: https://en.wikipedia.org/wiki/1000_Genomes_Project
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000238
+name: gnomAD
+def: "An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD. http://gnomad.broadinstitute.org/" []
+synonym: "  Exome Aggregation Consortium" EXACT []
+synonym: " ExAC" EXACT []
+synonym: "Genome Aggregation Database" EXACT []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000239
+name: TOPMed
+def: "Whole genome variant calling data from humans worldwide with heart, lung, blood, and sleep disorders. Ensembl display population frequencies from TOPMed. https://www.nhlbi.nih.gov/science/trans-omics-precision-medicine-topmed-program" []
+synonym: "Trans-Omics for Precision Medicine" EXACT []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000240
+name: UK10K
+def: "Study comparing exomes of 6000 diseased individuals with 4000 healthy individuals in the UK in order to identify disease-causing variants. Ensembl display population frequencies from the control group. https://www.uk10k.org/" []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000241
+name: HapMap
+def: "An international collaboration formed to develop a haplotype map of the human genome and thus describe the common patterns of human DNA sequence variation using genotyping. Ensembl display sample genotypes and population frequencies from the HapMap project. https://www.genome.gov/10001688/international-hapmap-project/" []
+synonym: "International HapMap Project" EXACT []
+xref: https://en.wikipedia.org/wiki/International_HapMap_Project
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000242
+name: ClinVar
+def: "NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/" []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000243
+name: Phenotype source database
+def: "Database from which Ensembl imports phenotype associations with genes and/or variants." []
+is_a: ENSGLOSSARY:0000208 ! Ensembl sources
+
+[Term]
+id: ENSGLOSSARY:0000244
+name: OMIM
+def: "An online database that describes the function and phenotypes associated with human genes. Ensembl display phenotypes from OMIM and MIM morbid. https://www.omim.org/" []
+synonym: " Mendelian Inheritance in Man" EXACT []
+synonym: " MIM morbid" EXACT []
+synonym: " Online Mendelian Inheritance in Man" EXACT []
+synonym: "MIM" EXACT []
+xref: https://en.wikipedia.org/wiki/Online_Mendelian_Inheritance_in_Man
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000245
+name: OMIA
+def: "An online database that describes the function and phenotypes associated with animal genes. Ensembl display phenotypes from OMIA. https://www.omia.org/" []
+synonym: "Online Mendelian Inheritance in Animals" EXACT []
+xref: https://en.wikipedia.org/wiki/Online_Mendelian_Inheritance_in_Animals
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000246
+name: Orphanet
+def: "A catalogue of rare disease associations. Ensembl display phenotypes from Orphanet. http://www.orpha.net/" []
+xref: https://en.wikipedia.org/wiki/Orphanet
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000247
+name: GWAS catalog
+def: "A curated database that extracts associations between variants and genes from published genome-wide association studies in human. Ensembl display phenotypes from the GWAS catalog. https://www.ebi.ac.uk/gwas/" []
+synonym: "  NHGRI-EBI Genome-wide association study catalogue" EXACT []
+synonym: " Genome-wide association study catalog" EXACT []
+synonym: " Genome-wide association study catalogue" EXACT []
+synonym: " GWAS catalogue" EXACT []
+synonym: " NHGRI-EBI Genome-wide association study catalog" EXACT []
+synonym: " NHGRI-EBI GWAS Catalogue" EXACT []
+synonym: "NHGRI-EBI GWAS Catalog" EXACT []
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000248
+name: IMPC
+def: "An international scientific endeavour to create and characterise the phenotype of 20,000 knockout mouse strains. Ensembl display phenotypes from the IMPC. http://www.mousephenotype.org/" []
+synonym: "International Mouse Phenotyping Consortium" EXACT []
+xref: https://en.wikipedia.org/wiki/International_Mouse_Phenotyping_Consortium
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000249
+name: Animal QTLdb
+def: "Project aiming to house all publicly available QTL and association data on livestock animal species. Ensembl display phenotypes from the Animals QTLdb. https://www.animalgenome.org/cgi-bin/QTLdb/index" []
+synonym: "Animal Quantitative Trait Loci Database" EXACT []
+is_a: ENSGLOSSARY:0000243 ! Phenotype source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000250
+name: HGMD
+def: "Project aiming to collate all known (published) gene lesions responsible for human inherited disease. Full HGMD access is restricted to license holders so Ensembl supports the minimal public data release which consists of variant/mutation names and locations. http://www.hgmd.cf.ac.uk/ac/index.php" []
+synonym: "Human Gene Mutation Database" EXACT []
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_phenotype_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000251
+name: COSMIC
+def: "Database of somatic variants found in cancer. COSMIC licensing does not permit redistribution of the full dataset, but mutation identifiers, locations and tumour types are available in Ensembl. http://cancer.sanger.ac.uk/cosmic" []
+synonym: " Catalog Of Somatic Mutations In Cancer" EXACT []
+synonym: "Catalogue Of Somatic Mutations In Cancer" EXACT []
+xref: https://en.wikipedia.org/wiki/COSMIC_cancer_database
+is_a: ENSGLOSSARY:0000232 ! Variation source database
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/sources_documentation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000252
+name: Protein source database
+is_a: ENSGLOSSARY:0000208 ! Ensembl sources
+
+[Term]
+id: ENSGLOSSARY:0000253
+name: PDB
+def: "A repository for 3D biological macromolecular structure data. Ensembl provide links out to the PDB, and use structures to display the locations of variants in proteins. http://www.ebi.ac.uk/pdbe/" []
+synonym: "Protein Data Bank" EXACT []
+xref: https://en.wikipedia.org/wiki/Protein_Data_Bank
+is_a: ENSGLOSSARY:0000252 ! Protein source database
+
+[Term]
+id: ENSGLOSSARY:0000254
+name: Algorithm
+def: "A sequence of computational tasks or actions that carry out a specific function." []
+xref: https://en.wikipedia.org/wiki/Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000255
+name: Ensembl Genebuild
+def: "The automatic process by which Ensembl plot known RNA and protein sequence onto the genome, using sequence similarity." []
+synonym: " Ensembl annotation" EXACT []
+synonym: " Ensembl Genes" EXACT []
+synonym: "Genebuild" EXACT []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/genome_annotation.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000256
+name: Ensembl Havana
+def: "Human And Vertebrate ANalysis and Annotation. The team within Ensembl who manually annotate genes and transcripts for a subset of species." []
+synonym: " manual annotation" EXACT []
+synonym: "Havana" EXACT []
+is_a: ENSGLOSSARY:0000255 ! Ensembl Genebuild
+property_value: http://ensembl.org/glossary/property/documentation "www.ensembl.org/info/genome/genebuild/manual_havana.html" xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000257
+name: Ensembl Regulatory Build
+def: "The process by which Ensembl predict the location of regions that regulate gene expression using epigenomic evidence." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_build.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000258
+name: Ensembl gene tree pipeline
+def: "The process by which Ensembl compare gene sequences in order to construct gene trees and predict homologues." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/homology_method.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000259
+name: InterProScan
+def: "InterPro is an integrated resource for protein families, domains and sites, combining information from several different protein signature databases, including PROSITE, PRINTS, Pfam, Seg, SignalP, Gene3D, SMART, TIGRFAMs, PIR SuperFamilies and SUPERFAMILY. Ensembl run InterProScan on all protein sequences, which uses these protein signatures to identify domains. https://www.ebi.ac.uk/interpro/" []
+xref: https://en.wikipedia.org/wiki/InterPro
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000260
+name: BLAST
+def: "A sequence comparison algorithm optimised for speed which is used to search sequence databases for optimal local alignments to a query." []
+synonym: "Basic Local Alignment Search Tool" EXACT []
+xref: https://en.wikipedia.org/wiki/BLAST
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000261
+name: BLAT
+def: "An mRNA/DNA and cross-species protein sequence analysis tool to quickly find sequences of 95% and greater similarity of length 40 bases or more." []
+synonym: "BLAST-Like Alignment Tool" EXACT []
+xref: https://en.wikipedia.org/wiki/BLAT_(bioinformatics)
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000262
+name: DUST
+def: "A standalone application that looks for low complexity sequences." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000263
+name: Eponine
+def: "Eponine is a probabilistic method for detecting transcription start sites (TSS) in mammalian genomic sequence, with good specificity and excellent positional accuracy. Eponine models consist of a set of DNA weight matrices recognising specific sequence motifs. Each of these is associated with a position distribution relative to the TSS. http://www.sanger.ac.uk/science/tools/eponine" []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/automatic_coding.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000264
+name: GeneWise
+def: "GeneWise is a sequence analysis tool for comparing proteins to DNA sequences allowing for introns and frameshifts. It is used in the Targetted stage of the Ensembl GeneBuild. https://www.ebi.ac.uk/Tools/psa/genewise/" []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/automatic_coding.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000265
+name: Exonerate
+def: "A fast gapped DNA-DNA alignment algorithm. It can be used for aligning various types of sequences such as genomic DNA, cDNAs/ESTs, and proteins. It is used in the Targetted stage of the Ensembl GeneBuild. https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate" []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000266
+name: Projection build
+def: "A gene build method used by Ensembl for low coverage genomes, allowing genes to be annotated that span two scaffolds by mapping to the human gene." []
+is_a: ENSGLOSSARY:0000255 ! Ensembl Genebuild
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/2x_genomes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000267
+name: GENSCAN
+def: "An HMM-based ab initio gene prediction method, used to create a track of ab initio genes in Ensembl. http://genes.mit.edu/GENSCAN.html" []
+xref: https://en.wikipedia.org/wiki/GENSCAN
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000268
+name: SIFT
+def: "A tool which predicts if missense variants are likely to affect protein function based on sequence homology and the physico-chemical similarity between the alternate amino acids. http://sift.bii.a-star.edu.sg/" []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html#sift xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000269
+name: PolyPhen
+def: "A tool which predicts if missense variants are likely to affect protein function based on physical and comparative considerations. http://genetics.bwh.harvard.edu/pph2/" []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/predicted_data.html#polyphen xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000270
+name: RepeatMasker
+def: "The method by which repeated sequences and low-complexity regions are hidden, usually used in searches by alignment and homology-searching programs. http://www.repeatmasker.org/" []
+xref: https://en.wikipedia.org/wiki/Repeated_sequence_(DNA)
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000271
+name: BLOSUM 62
+def: "A matrix that defines scores for amino acid substitutions, reflecting the similarity of physicochemical properties, and observed substitution frequencies. The BLOSUM 62 matrix is tailored using sequences sharing no more than 62% identity (sequences closer evolutionary, were represented by a single sequence in the alignment to avoid bias from using related family members)." []
+synonym: "Blocks Substitution Matrix" EXACT []
+xref: https://en.wikipedia.org/wiki/BLOSUM
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+
+[Term]
+id: ENSGLOSSARY:0000272
+name: VEP
+def: "The Variant Effect Predictor (VEP) is an Ensembl tool that predicts the effect of your variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions." []
+synonym: "Variant Effect Predictor" EXACT []
+xref: https://en.wikipedia.org/wiki/Ensembl_Genomes#Variant_Effect_Predictor
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/docs/tools/vep/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000273
+name: File formats
+
+[Term]
+id: ENSGLOSSARY:0000274
+name: HGVS nomenclature
+def: "A set of recomendations for variant naming. The nomenclature describes the change a variant allele has on a named (genomic, transcript or protein) sequence. Can be used as an input for the VEP and displayed for known variants. http://varnomen.hgvs.org/" []
+synonym: " HGVS" EXACT []
+synonym: " Human Genome Variation Society" EXACT []
+synonym: " Sequence Variant Nomenclature" EXACT []
+synonym: "HGVS names" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000275
+name: VCF
+def: "VCF is a standard format for listing genetic variation, which is the output for many variant callers. It can be used as an input for the Ensembl VEP and is used to store and download variation data in Ensembl." []
+synonym: "Variant Call Format" EXACT []
+xref: https://en.wikipedia.org/wiki/Variant_Call_Format
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/docs/tools/vep/vep_formats.html#vcf xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000276
+name: BED
+def: "BED is a simple format for listing genomic loci. It can be used to upload data to view in Ensembl, as a custom file for additional VEP annotation and is used to store and download constrained elements in Ensembl." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/bed.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000277
+name: FASTA
+def: "FASTA is used to store finished nucleotide and peptide sequences. The Ensembl FTP site has genome, cDNA, CDS and peptide sequences in FASTA, and you can export FASTA from various webpages in Ensembl." []
+xref: https://en.wikipedia.org/wiki/FASTA_format
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000278
+name: BAM/CRAM
+def: "BAM and CRAM store alignments of NGS data to the genome. Ensembl allow attachment of BAM and CRAM files to view in against the gene, and store RNA-seq, ChIP-seq and DNase-seq in BAM." []
+synonym: " BAM" EXACT []
+synonym: " CRAM" EXACT []
+synonym: " SAM" EXACT []
+synonym: "Binary alignment map" EXACT []
+xref: https://en.wikipedia.org/wiki/Binary_Alignment_Map
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/large.html#bam-format xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000279
+name: BigBed
+def: "BigBed is an indexed form of BED, which can be used to store larger scale data. Ensembl allow attachment of BigBed files to view against the genome and store peaks of regulatory evidence as BigBed." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/large.html#bb-format xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000280
+name: Ensembl default (VEP)
+def: "Ensembl default is an input format for the VEP, used to describe the position and alleles of a variant." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/docs/tools/vep/vep_formats.html#default xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000281
+name: BedGraph
+def: "BedGraph allows you to store scores for loci in BED format, the loci can be of varying size. It can be uploaded to view in Ensembl." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/bed.html#bedGraph xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000282
+name: GTF
+def: "GTF is a tab-limited format that describes genomic features, such as genes and transcripts, and allows hierarchical linking of gene features. Ensembl store gene files as GTF, allow attachment of GTF files to view against the genome and allow custom annotation with the VEP using GTF files." []
+synonym: " General transfer format" EXACT []
+synonym: "Gene transfer format" EXACT []
+xref: https://en.wikipedia.org/wiki/Gene_transfer_format
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/gff.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000283
+name: GFF
+def: "GFF is a tab-limited format that describes genomic features, such as genes and transcripts, and allows hierarchical linking of gene features. Ensembl store gene files as GFF, allow attachment of GFF files to view against the genome and allow custom annotation with the VEP using GFF files." []
+synonym: " gene-finding format" EXACT []
+synonym: " generic feature format" EXACT []
+synonym: "General feature format" EXACT []
+xref: https://en.wikipedia.org/wiki/General_feature_format
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/gff3.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000284
+name: PSL
+def: "PSL represents alignments and can be viewed in Ensembl." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/psl.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000285
+name: Wiggle
+def: "Wiggle format expresses scores across genomic loci, requiring fixed size bins for the scores. It can be uploaded to view in Ensembl." []
+synonym: "WIG" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/wig.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000286
+name: BigWig
+def: "BigWig is an indexed form of wiggle and can be used to store larger scale data. Ensembl simplify NGS data, such as ChIP-seq and RNA-seq into BigWig to view in the browser. It can also be used to attach your own data to Ensembl." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/large.html#bw-format xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000287
+name: Pairwise interactions (WashU)
+def: "Pairwise interactions, such as those derived from Hi-C, can be stored in the WashU format and viewed in Ensembl." []
+xref: https://en.wikipedia.org/wiki/Chromosome_conformation_capture
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/website/upload/pairwise.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000288
+name: chain
+def: "Chain files describe the mapping between different genome assemblies. Ensembl store these on the FTP site." []
+synonym: " chain mapping" EXACT []
+synonym: " mapping" EXACT []
+synonym: "assembly chain" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000289
+name: Newick
+def: "Newick is a tree format. Ensembl gene trees can be downloaded in Newick and it is used to store Ensembl species trees." []
+synonym: " New Hampshire tree format" EXACT []
+synonym: " Newick format" EXACT []
+synonym: " Newick notation" EXACT []
+synonym: "Newick tree format" EXACT []
+xref: https://en.wikipedia.org/wiki/Newick_format
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000290
+name: EMBL (file format)
+def: "EMBL files store sequence and accompanying annotation for features across a genomic region. They can be exported from various webpages in Ensembl and are stored for 1Mb regions across the genome." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000291
+name: GenBank (file format)
+def: "GenBank files store sequence and accompanying annotation for features across a genomic region. They can be exported from various webpages in Ensembl and are stored for 1Mb regions across the genome." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000218 ! GenBank (database)
+
+[Term]
+id: ENSGLOSSARY:0000292
+name: EMF Alignment format
+def: "Ensembl Multi Format (EMF) stores genomic alignments in Ensembl." []
+synonym: "Ensembl Multi Format" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/data/ftp/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000293
+name: MAF
+def: "Multiple alignment format (MAF) stores genomic alignments." []
+synonym: "Multiple alignment format" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/data/ftp/index.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000294
+name: MySQL
+def: "MySQL is a database. All Ensembl data is stored in MySQL relational tables, which can be found on the FTP site and accessed directly by MySQL queries." []
+xref: https://en.wikipedia.org/wiki/MySQL
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/data/mysql.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000295
+name: VEP cache
+def: "A VEP cache contains all the gene and variant data needed to run a VEP query, and can be used to run large queries quickly on your own machine. These can be installed as part of your VEP installtion, or downloaded from the FTP site." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000296
+name: GVF
+def: "Genome Variation Format (GVF) is used to store variation data. It can be found on the Ensembl FTP site." []
+synonym: "Genome Variation Format" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000297
+name: PhyloXML
+def: "PhyloXML is an XML language for the analysis, exchange, and storage of phylogenetic trees (or networks) and associated data. It is used to store Ensembl phylogenetic trees." []
+xref: https://en.wikipedia.org/wiki/PhyloXML
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000298
+name: OrthoXML
+def: "OrthoXML is an XML format to allow the storage and comparison of orthology data. It is used to store Ensembl homologues." []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000299
+name: RDF
+def: "Resource Description Framework (RDF) is used as a metadata data model. Ensembl use it to describe links from Ensembl annotations to those annotations in other databases." []
+synonym: "Resource Description Framework" EXACT []
+xref: https://en.wikipedia.org/wiki/Resource_Description_Framework
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000300
+name: AGP
+def: "A golden path. A file provided to Ensembl that describes how the longer sequences in the genome assembly were assembled from shorter sequences. For example, an AGP file can describe how a chromosome is assembled from a collection of scaffolds or a collection of contigs. For an AGP file that describes how a scaffold is assembled from a collection of contigs, each contig will be listed on a separate line in the AGP file and the line will include information about where the contig lies within the scaffold and the orientation of the contig." []
+synonym: "A golden path" EXACT []
+is_a: ENSGLOSSARY:0000273 ! File formats
+
+[Term]
+id: ENSGLOSSARY:0000301
+name: Repeat
+xref: https://en.wikipedia.org/wiki/Repeated_sequence_(DNA)
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000302
+name: Repeat masking
+def: "The method by which repeated sequences and low-complexity regions are hidden, usually used in searches by alignment and homology-searching programs." []
+xref: https://en.wikipedia.org/wiki/Repeated_sequence_(DNA)
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000303
+name: Hard masked
+def: "Hard masked sequence is repeat masked with the repeat sequences replaced by Ns. Hard masked sequence files on the Ensembl FTP site have \"rm\" in their file name." []
+is_a: ENSGLOSSARY:0000302 ! Repeat masking
+
+[Term]
+id: ENSGLOSSARY:0000304
+name: Soft masked
+def: "Soft masked sequence is repeat masked with the repeat sequences in lower case. Soft masked sequence files on the Ensembl FTP site have \"sm\" in their file name." []
+is_a: ENSGLOSSARY:0000302 ! Repeat masking
+
+[Term]
+id: ENSGLOSSARY:0000305
+name: Alu insertion
+def: "A dispersed intermediately repetitive DNA sequence found in the human genome in about one million copies. The sequence is about 300 bp long and is found commonly in introns, 3' untranslated regions of genes, and intergenic genomic regions. The name Alu comes from the a recognition site for the AluI endonuclease that cleaves it." []
+xref: https://en.wikipedia.org/wiki/Alu_element
+xref: SO:0002063
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000306
+name: Microsatellite
+def: "A region in the genomic sequence containing short tandem repeats of 2-10bp." []
+xref: https://en.wikipedia.org/wiki/Microsatellite
+xref: SO:0000289
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000307
+name: Centromere
+def: "The region of the chromosome at which the two sister chromatids are joined during mitosis and meiosis, mostly composed of satellite DNA." []
+xref: https://en.wikipedia.org/wiki/Centromere
+xref: SO:0000577
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000308
+name: Low complexity regions
+def: "Poly-purine or poly-pyrimidine stretches, or regions of extremely high AT or GC content." []
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000309
+name: RNA repeats
+def: "Non-functional copies of RNA genes which have been reintegrated into the genome with the assistance of a reverse transcriptase." []
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000310
+name: Satellite repeats
+def: "Multiple copies of the same base sequence on a DNA sequence. The repeated pattern can vary in length from a single base to several thousand bases long." []
+xref: https://en.wikipedia.org/wiki/Satellite_DNA
+xref: SO:0000005
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000311
+name: Simple repeats
+def: "Duplications of simple sets of DNA bases (typically 1-5bp) such as A, CA, CGG etc." []
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000312
+name: Tandem repeats
+def: "Typically found at the centromeres and telomeres of chromosomes these are duplications of more complex 100-200 base sequences." []
+xref: https://en.wikipedia.org/wiki/Tandem_repeat
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000313
+name: LTRs
+def: "Long tandem repeats." []
+xref: https://en.wikipedia.org/wiki/Tandem_repeat
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000314
+name: Type I Transposons/LINE
+def: "Long Interspersed Elements. Retrotransposed elements in the genome containing open reading frames encoding (often inactive) reverse transcription machinery." []
+synonym: " long interspersed nuclear element" EXACT []
+synonym: "LINE" EXACT []
+xref: https://en.wikipedia.org/wiki/Long_interspersed_nuclear_element
+xref: SO:0000194
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000315
+name: Type I Transposons/SINE
+def: "Short Interspersed Elements. Retrotransposed elements less than 500 bp that contain tRNA, snRNA and rRNA, which require other mobile elements to be transposed. Alu elements are a type of SINE." []
+synonym: " short interspersed nuclear element" EXACT []
+synonym: "SINE" EXACT []
+xref: https://en.wikipedia.org/wiki/Short_interspersed_nuclear_element
+xref: SO:0000206
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000316
+name: Type II Transposons
+def: "Elements that have been transposed and duplicated around the genome by excision and ligation." []
+synonym: "DNA transposon" EXACT []
+xref: https://en.wikipedia.org/wiki/Transposable_element#Classification
+xref: SO:0000182
+is_a: ENSGLOSSARY:0000301 ! Repeat
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/assembly_repeats.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000317
+name: Unknown repeat
+def: "Repeats that cannot be classified." []
+is_a: ENSGLOSSARY:0000301 ! Repeat
+
+[Term]
+id: ENSGLOSSARY:0000318
+name: Alignments
+def: "A comparison between two or more sequences by matching identical and/or similar residues/nucleotides and assigning a score to the match." []
+xref: https://en.wikipedia.org/wiki/Sequence_alignment
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+
+[Term]
+id: ENSGLOSSARY:0000319
+name: Whole genome alignment
+def: "An alignment carried out using the whole genome sequence." []
+is_a: ENSGLOSSARY:0000318 ! Alignments
+
+[Term]
+id: ENSGLOSSARY:0000320
+name: Pairwise whole genome alignment
+def: "An alignment between two whole genomes." []
+synonym: " Pairwise sequence alignment" EXACT []
+synonym: "Pairwise alignment" EXACT []
+is_a: ENSGLOSSARY:0000319 ! Whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/analyses.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000321
+name: Multiple whole genome alignment
+def: "An alignment between more than two whole genomes of a selected taxon." []
+synonym: " Multiple sequence alignment" EXACT []
+synonym: "Multiple alignment" EXACT []
+is_a: ENSGLOSSARY:0000319 ! Whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/multiple_genome_alignments.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000322
+name: Synteny
+def: "In a genomic context we refer to syntenic regions if the sequence is globally conserved between two species." []
+xref: https://en.wikipedia.org/wiki/Synteny
+is_a: ENSGLOSSARY:0000319 ! Whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/synteny.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000323
+name: CIGAR
+def: "The cigar line defines the sequence of matches/mismatches and deletions (or gaps) in an alignment" []
+synonym: "Compact Idiosyncratic Gapped Alignment Report" EXACT []
+xref: https://en.wikipedia.org/wiki/Sequence_alignment#Representations
+is_a: ENSGLOSSARY:0000318 ! Alignments
+
+[Term]
+id: ENSGLOSSARY:0000324
+name: Identity
+def: "A measure of how similar two alignment sequences are, specifically, what percentage of amino acids or nucleotides are the same in type and position between the two sequences. The value is dependent on which sequence is used as the reference, since it is a percentage of that reference." []
+synonym: "%ID" EXACT []
+is_a: ENSGLOSSARY:0000318 ! Alignments
+
+[Term]
+id: ENSGLOSSARY:0000325
+name: Wasabi
+def: "An application for displaying sequence alignments with custom colour-annotation, which is used by Ensembl displaying gene tree and family alignments. http://wasabiapp.org/" []
+is_a: ENSGLOSSARY:0000318 ! Alignments
+
+[Term]
+id: ENSGLOSSARY:0000326
+name: Similarity
+def: "How well one sequence matches another determined by calculation by an alignment program of identical and conserved residues/nucleotides." []
+is_a: ENSGLOSSARY:0000318 ! Alignments
+
+[Term]
+id: ENSGLOSSARY:0000327
+name: Pecan
+def: "Pecan is a global multiple sequence alignment program that makes practical the probabilistic consistency methodology for significant numbers of sequences of practically arbitrary length." []
+is_a: ENSGLOSSARY:0000321 ! Multiple whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/multiple_genome_alignments.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000328
+name: EPO
+def: "The EPO (Enredo, Pecan, Ortheus) pipeline is a three step pipeline for whole-genome multiple alignments, using Enredo segments, aligning them with Pecan and constructing ancestal sequences with Ortheus." []
+synonym: "Enredo Pecan Ortheus" EXACT []
+is_a: ENSGLOSSARY:0000321 ! Multiple whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/multiple_genome_alignments.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000329
+name: Progressive cactus
+def: "Progressive-Cactus is a next-generation aligner that stores whole-genome alignments in a graph structure." []
+is_a: ENSGLOSSARY:0000321 ! Multiple whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/multiple_genome_alignments.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000330
+name: LastZ
+def: "LASTZ is a program for aligning DNA sequences in a pairwise manner. Its precedesessor is BlastZ." []
+is_a: ENSGLOSSARY:0000320 ! Pairwise whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/analyses.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000331
+name: BlastZ
+def: "BlastZ is a program for aligning DNA sequences in a pairwise manner. It has been replaced by LASTZ." []
+is_a: ENSGLOSSARY:0000320 ! Pairwise whole genome alignment
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/compara/analyses.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000332
+name: Translated Blat
+def: "Translated Blat can be used for alignment of the coding regions of genomes only in a pairwise manner." []
+xref: https://en.wikipedia.org/wiki/BLAT_(bioinformatics)
+is_a: ENSGLOSSARY:0000320 ! Pairwise whole genome alignment
+
+[Term]
+id: ENSGLOSSARY:0000333
+name: Regulatory features
+def: "Regions that are predicted to regulate the expression of genes, based on the Ensembl regulatory build." []
+synonym: "reg-feat" EXACT []
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000334
+name: Promoters 
+def: "Regions at the 5' end of genes where transcription factors and RNA polymerase bind to initiate transcription." []
+xref: https://en.wikipedia.org/wiki/Promoter_(genetics)
+xref: SO:0000167
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000335
+name: Promoter flanking regions 
+def: "Transcription factor binding regions that flank promoters." []
+xref: https://en.wikipedia.org/wiki/Promoter_(genetics)
+xref: SO:0001952
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000336
+name: Enhancers 
+def: "Regions that bind transcription factors and interact with promoters to stimulate transcription of distant genes." []
+xref: https://en.wikipedia.org/wiki/Enhancer_(genetics)
+xref: SO:0000165
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000337
+name: CTCF binding sites 
+def: "Regions that bind CTCF, the insulator protein that demarcates open and closed chromatin." []
+xref: https://en.wikipedia.org/wiki/CTCF
+xref: SO:0001974
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000338
+name: Transcription factor binding sites 
+def: "Sites which bind transcription factors, for which no other role can be determined as yet." []
+xref: SO:0000235
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000339
+name: Open chromatin regions 
+def: "Regions of spaced out histones, making them accessible to protein interactions." []
+xref: https://en.wikipedia.org/wiki/DNase_I_hypersensitive_site
+xref: SO:0001747
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000340
+name: Regulatory activity
+def: "The activity state of a regulatory feature in a specific epigenome." []
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000341
+name: Active
+def: "When a regulatory feature displays an epigenetic signature which is consistent with it carrying out its named function, for example an active Promoter has an epigenetic signature consistent with initiating transcription, while an active CTCF binding site will bind CTCF. It is analogous to a sprinter running." []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000342
+name: Poised
+def: "When a regulatory feature displays a epigenetic signature with the potential to be activated. It is analogous to a sprinter in the blocks." []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000343
+name: Repressed
+def: "When a regulatory feature is epigenetically repressed, having an epigenetic signature that prevents it from being active." []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000344
+name: Inactive
+def: "When a regulatory feature bears no epigenetic modifications from the ones included in the Regulatory Build." []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000345
+name: NA
+def: "When there is no available data in the cell type for this regulatory feature." []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulatory_features.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000346
+name: Epigenome evidence
+def: "Experimental data that is used to construct and determine activity of regulatory features." []
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000347
+name: ChIP-seq
+def: "A method to determine the genomic regions that proteins bind to." []
+synonym: " Chromatin Immunoprecipitation Sequencing" EXACT []
+synonym: "ChIPSeq" EXACT []
+xref: https://en.wikipedia.org/wiki/ChIP-sequencing
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000348
+name: DNase sensitivity
+def: "A method to determine regions of open and closed chromatin." []
+synonym: " DNase hypersensitivity" EXACT []
+synonym: "DNase-seq" EXACT []
+xref: https://en.wikipedia.org/wiki/DNase-Seq
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000349
+name: Transcription factor
+def: "A protein that binds to DNA and controls the rate of transcription." []
+synonym: "TF" EXACT []
+xref: https://en.wikipedia.org/wiki/Transcription_factor
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000350
+name: Histone modification
+def: "Covalent modifications to the histone proteins that make up the nucleosome, which are known to regulate gene expression." []
+synonym: " histone acetylation" EXACT []
+synonym: " histone methylation" EXACT []
+synonym: "Histone mod" EXACT []
+xref: https://en.wikipedia.org/wiki/Histone#Histone_modification
+xref: SO:0001700
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000351
+name: DNA methylation
+def: "Modification of cytosines in CpGs with methyl groups, which is known to repress gene expression." []
+synonym: "CpG methylation" EXACT []
+xref: https://en.wikipedia.org/wiki/DNA_methylation
+xref: SO:0000114
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_other.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000352
+name: Bisulfite sequencing
+def: "A method to determine the methylation of genomic cytosines." []
+synonym: " RRBS" EXACT []
+synonym: " WGBS" EXACT []
+synonym: "Bisulphite sequencing" EXACT []
+xref: https://en.wikipedia.org/wiki/Bisulfite_sequencing
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_other.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000353
+name: Signal
+def: "A count of the number of NGS reads from an epigenome experiment aligned to a locus, shown as a BigWig across the genome." []
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/peak_calling.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000354
+name: Peak
+def: "Locus identified from epigenome signal as being having high signal, shown as a BigBed across the genome." []
+is_a: ENSGLOSSARY:0000346 ! Epigenome evidence
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/peak_calling.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000355
+name: Transcription factor binding motif
+def: "Short genomic sequence that is known to bind to a particular transcription factor." []
+synonym: " Motif" EXACT []
+synonym: " Position weight matrices" EXACT []
+synonym: " PWM" EXACT []
+synonym: " TFBM" EXACT []
+synonym: "Position weight matrix" EXACT []
+xref: https://en.wikipedia.org/wiki/DNA_binding_site
+is_a: ENSGLOSSARY:0000333 ! Regulatory features
+
+[Term]
+id: ENSGLOSSARY:0000356
+name: Epigenome
+def: "A cell type, such as a primary tissue or lab cell line, for which we have epigenome evidence and can predict regulatory features." []
+synonym: " cell type" EXACT []
+synonym: " tissue" EXACT []
+synonym: "Cell line" EXACT []
+is_a: ENSGLOSSARY:0000340 ! Regulatory activity
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/funcgen/regulation_sources.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000357
+name: Marker
+def: "A short sequence whose placement on the genome is known." []
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+
+[Term]
+id: ENSGLOSSARY:0000358
+name: UniSTS
+def: "UniSTS is a NCBI resource for non-redundant Sequence Tagged Sites (STS) markers. For each marker, UniSTS displays the primer sequences, product size, and mapping information, as well as cross references to dbSNP, RHdb, GDB, MGD, etc. The marker report also lists GenBank and RefSeq records that contain the primer sequences determined by ePCR." []
+is_a: ENSGLOSSARY:0000357 ! Marker
+
+[Term]
+id: ENSGLOSSARY:0000359
+name: External reference
+def: "Mapping between Ensembl genes, transcripts and proteins to the same features in other databases." []
+synonym: " general identifiers" EXACT []
+synonym: "xref" EXACT []
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/xrefs.html xsd:string
+
+[Typedef]
+id: http://ensembl.org/glossary/property/related
+name: related
 
