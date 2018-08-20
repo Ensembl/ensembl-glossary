@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
-        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2018-04-17/ensembl-glossary.owl"/>
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2018-08-20/ensembl-glossary.owl"/>
         <rdfs:comment>ensembl-glossary</rdfs:comment>
     </owl:Ontology>
     
@@ -4503,6 +4503,50 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> general identifiers</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xref</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">External reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000360 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000360">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool that integrates multiple annotations into one metric for scoring the deleteriousness of single nucleotide variants.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CADD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000361 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000361">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool for predicting the pathogenicity of single nucleotide variants using an ensemble method.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">REVEL</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000362 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000362">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool for assessing the functional impact of single nucleotide variants based on evolutionary conservation of the affected amino acid in protein homologues.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MutationAssessor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000363 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000363">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool for predicting the pathogenicity of single nucleotide variants using a logistic regression based ensemble method.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MetaLR</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

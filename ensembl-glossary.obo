@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2018-04-17
+data-version: http://ensembl.org/glossary/releases/2018-08-20
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -2963,6 +2963,34 @@ synonym: " general identifiers" EXACT []
 synonym: "xref" EXACT []
 is_a: ENSGLOSSARY:0000001 ! Genome annotation
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/xrefs.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000360
+name: CADD
+def: "A tool that integrates multiple annotations into one metric for scoring the deleteriousness of single nucleotide variants." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000361
+name: REVEL
+def: "A tool for predicting the pathogenicity of single nucleotide variants using an ensemble method." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000362
+name: MutationAssessor
+def: "A tool for assessing the functional impact of single nucleotide variants based on evolutionary conservation of the affected amino acid in protein homologues." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000363
+name: MetaLR
+def: "A tool for predicting the pathogenicity of single nucleotide variants using a logistic regression based ensemble method." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
