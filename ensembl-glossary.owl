@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
-        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2018-08-20/ensembl-glossary.owl"/>
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2019-03-13/ensembl-glossary.owl"/>
         <rdfs:comment>ensembl-glossary</rdfs:comment>
     </owl:Ontology>
     
@@ -4547,6 +4547,51 @@
         <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool for predicting the pathogenicity of single nucleotide variants using a logistic regression based ensemble method.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MetaLR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000364 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000364">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000003"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Matched Annotation between NCBI and EMBL-EBI is a collaboration between Ensembl/GENCODE and RefSeq to identify transcripts that match GRCh38 and are 100% identical between RefSeq and Ensembl/GENCODE for 5&apos; UTR, CDS, splicing and 3&apos;UTR.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EBI</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EMBL-EBI</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and Ensembl</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAIN</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MANE</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000365 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000365">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000364"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Matched Annotation between NCBI and EMBL-EBI is a collaboration between Ensembl/GENCODE and RefSeq. The MANE Select is a default transcript per human gene that is representative of biology, well-supported, expressed and highly-conserved. This transcript set matches GRCh38 and is 100% identical between RefSeq and Ensembl/GENCODE for 5&apos; UTR, CDS, splicing and 3&apos;UTR.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EBI Select</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EMBL-EBI Select</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and Ensembl Select</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAIN Select</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MANE Select</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000366 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000366">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000365"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The prelimary release (phase 1) of the MANE Select data set.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EBI Select v0.5</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and EMBL-EBI Select v0.5</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation between NCBI and Ensembl Select v0.5</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAIN Select v0.5</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MANE Select v0.5</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
