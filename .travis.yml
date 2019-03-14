@@ -21,5 +21,9 @@ branches:
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
 notifications:
   email:
-    - jupp@ebi.ac.uk                                                                                                   |
-    - emily@ebi.ac.uk                                                                                              |
+    - jupp@ebi.ac.uk
+    - emily@ebi.ac.uk
+
+env:
+  global:
+    secure: FsDf7tj329WR4IqH6CRUhnlzK/nHXnmSeGvzoKR+zZX+Rq+ErT2IFFAlXeYu/lpJgiyVrvqam2DUafpsUdO6ddPxONHsUA3RS2zLVVRt5vXkC5ThSK2kk/9brobf+Syv+LSHtCTtsdC4+WgA2MjD9O7couNfOxEWf/J8y5ampZ3zbdRuSqV1gXhbZ5X/JyFUe1SrTEwZDQOb3JTZxWm9IKJeOYDb3dBQxGVEcnZrko44x+qoiQmBkncUYrVR9tikVruv0VVZ86ER8sJRl4cIemDMVwvb2OVBDYMsY7ubH+C5Y1FQ/uo/v0go3+wTEzohvmsSBqgapOqTZ1qErMPMpPS9LLlMjGLcGlpKS3Pw0cqzG679iX8tXi9hPxcvLR316QO50Y76p/SnP3Zvvg+QZsgHCsT7VZwzP0tq/JXg+xw2ZyVfP4WE5Rwyv8wAk74Kx1RuAlPUtsqWTeRXVUcdhBMlkEb+d3h6bk+TDA82bSY2DuRTqs45WyVl2rPQlvsaKx5sSKFRsGyfnHeMiojOvrjCoSYxEGOj32mG0deey7Uq+OPO5UDxWBqT2WpfUIj3znne7BVcxNjgaW9BUskef+vdhj/ZQX0RC5hsV+0daexfHHIyYI1/l0MAWLNZdxZ8txPF/Qn9fCi6joIi/VY2jsTpyaUPX4NkxcsGqi5Nk4c=
