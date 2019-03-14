@@ -57,12 +57,23 @@ git push origin
 
 This will add the changes to `ontology.tsv` into your local Git repository and push those changes back to the GitHub hosted version.
 
+## Building the ontology file (optional step)
+
+**This step need only be run if you are building the ontology file locally and committing this into the repo. This should normally be handled by Travis-CI.**
+
+```bash
+cd src/ontology
+make
+make prepare_release
+```
+
+You will need Java8+ to run this builder.
+
 # Other Repository Information
 
 ## Template
 
 The ontology file is built from a spreadsheet template in [src/template/ontology.tsv](src/template/ontology.tsv)
-
 
 ### Editors' version
 
