@@ -12,6 +12,10 @@ before_script:
 # command to run tests
 script: cd src/ontology && make test
 
+# build the ontology and push
+after_script:
+  - ./.travis/push.sh
+
 # whitelist
 branches:
   only:
