@@ -13,8 +13,7 @@ build_ontology() {
 }
 
 commit_files() {
-  ls -la
-  git add ensembl_ontology.obo ensembl_ontology.owl
+  git add ensembl-glossary.obo ensembl-glossary.owl
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [skip travis]"
 }
 
