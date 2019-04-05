@@ -42,8 +42,11 @@ function upload_files() {
     msg "not pushing updates to branch $TRAVIS_BRANCH"
     return 0
   fi
-  git remote add origin-upload https://${GH_TOKEN}@github.com/Ensembl/ensembl-glossary.git > /dev/null 2>&1
-  if ! git push --quiet --follow-tags --set-upstream origin-upload "$TRAVIS_BRANCH" > /dev/null 2>&1; then
+  local remote=origin
+  if [[ $GITHUB_TOKEN ]]; then
+    remote=https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG
+  fi
+  if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
     err "failed to push git changes"
     return 1
   fi
