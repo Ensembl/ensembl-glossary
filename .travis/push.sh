@@ -21,7 +21,7 @@ function build_ontology() {
 }
 
 function commit_files() {
-  # Using https://gist.github.com/ddgenome/f3a60fe4c2af0cbe758556d982fbeea9 to get onto a real branch 
+  # Using https://gist.github.com/ddgenome/f3a60fe4c2af0cbe758556d982fbeea9 to get onto a real branch
   # and not detached HEAD
   if ! git checkout "$TRAVIS_BRANCH"; then
     err "failed to checkout $TRAVIS_BRANCH"
@@ -32,7 +32,7 @@ function commit_files() {
     err "failed to create git tag: $git_tag"
     return 1
   fi
-  
+
   git add ensembl-glossary.obo ensembl-glossary.owl
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
 }
@@ -47,10 +47,11 @@ function upload_files() {
     remote=https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG
   fi
   msg "Pushing new commits to $TRAVIS_REPO_SLUG over HTTPS"
-  if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
-    err "failed to push git changes"
-    return 1
-  fi
+  git push --follow-tags "$remote" "$TRAVIS_BRANCH"
+  # if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
+  #   err "failed to push git changes"
+  #   return 1
+  # fi
 }
 
 setup_git
