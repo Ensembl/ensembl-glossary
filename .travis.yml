@@ -29,7 +29,3 @@ notifications:
   email:
     - jupp@ebi.ac.uk
     - emily@ebi.ac.uk
-
-env:
-  global:
-    secure: "nWblwYtqimChf2G4ygWuUZzTdZkp98UDe5V5BE/BRkEjHhAXos/eON2k/DqkCoLavfSI7ydcyz4TXVjJCPklxZxH3xup1Xxw3WaL9M8OEw+2QZaI1VLfKqqZGbMjmaBIK40gxDomZYTmzXfTk0SMnDugJqtC7KLKgVm1YV/MyzCnB+QAbRxtGX8POmOVWtH4AC+n0mi+05Qk3fwPQjfy6pWz8wrdtOWYrzKXUB7mWSq5eAU8DtYdwBd/GQywuljIiJL6Bf9HFTd3prY4uBojlgY/E5YzcEu79ce2rPdO3+MQtOC41bj9zK1UhcoNXJxB3/pqZQDhHjr8iIYFXsFegh2FJYEF1BRczGQEphjnGja9hG9wez0jA/nC6CfmKMJWbETA8PrtnMENPdBzwrflX27WpIqkZEcLusz+ACxKBwdtRCcJoNXsidAD/S/d/bVbryRSTGUKgvYvZ1j22dM/pX/g1NgZ3gX52PwM6atTvWsvbMPQVdBFcQUkwKbTmm14/U3k5wnVK+tQt55sBX9E5KTF/qy7tjmQbAe4P4ip04IapjyiihuWpv3lQM6OhpfgYuWW1wIvGt7x37+LYvy8RUQr70TpOxc04X6YulAOuD2MKRfpmsnY+t+ydsltTnHY17GOhrzf0yfdO3JuG/fFNuHapkWDAZOmA9+gQiovSq0="

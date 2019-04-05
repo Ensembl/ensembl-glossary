@@ -43,15 +43,14 @@ function upload_files() {
     return 0
   fi
   local remote=origin
-  if [[ $GH_TOKEN ]]; then
-    remote=https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG
+  if [[ $GITHUB_TOKEN ]]; then
+    remote=https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG
   fi
   msg "Pushing new commits to $TRAVIS_REPO_SLUG over HTTPS"
-  git push --follow-tags "$remote" "$TRAVIS_BRANCH"
-  # if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
-  #   err "failed to push git changes"
-  #   return 1
-  # fi
+  if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
+    err "failed to push git changes"
+    return 1
+  fi
 }
 
 setup_git
