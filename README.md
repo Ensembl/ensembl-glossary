@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ensembl/ensembl-glossary.svg?branch=master)](https://travis-ci.org/ensembl/ensembl-glossary)
+[![Build Status](https://travis-ci.org/Ensembl/ensembl-glossary.svg?branch=master)](https://travis-ci.org/Ensembl/ensembl-glossary)
 
 # ensembl-glossary
 
