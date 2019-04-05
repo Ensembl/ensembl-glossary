@@ -21,6 +21,8 @@ branches:
   only:
     - master
     - test-travis
+  except:
+    - "/\\+travis\\d+$/"
 
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
 notifications:
