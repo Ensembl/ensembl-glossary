@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2019-04-05
+data-version: http://ensembl.org/glossary/releases/2019-11-15
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3024,6 +3024,48 @@ synonym: " Matched Annotation from NCBI and Ensembl Select v0.5" EXACT []
 synonym: "MAIN Select v0.5" EXACT []
 is_a: ENSGLOSSARY:0000365 ! MANE Select
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000367
+name: TAGENE
+def: "Long-read�sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team." []
+synonym: "tagine" EXACT []
+is_a: ENSGLOSSARY:0000003 ! Transcript
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000368
+name: STOP codon readthrough
+def: "The coding sequence contains a STOP codon that is translated (as supported by experimental evidence), and termination occurs instead at a canonical STOP codon further downstream. It is currently unknown which codon is used to replace the translated STOP codon, hence it is represented by 'X' in the protein sequence" []
+xref: https://en.wikipedia.org/wiki/Stop_codon#Translational_readthrough
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000369
+name: Forward strand
+def: "DNA strand arbitrary defined as the strand with its 5' end at the tip of the short chromosome arm (p). If a gene is forward-stranded, its sense (sequence matching cDNA) is on the forward strand. Forward strand is reverse complementary to the reverse strand." []
+synonym: " + strand" EXACT []
+synonym: " 1 strand" EXACT []
+synonym: " positive strand" EXACT []
+synonym: "Plus strand" EXACT []
+xref: SO:0001030
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000370 ! Reverse strand
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/Help/Faq?id=367 xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000370
+name: Reverse strand
+def: "DNA strand arbitrary defined as the strand with its 5' end at the tip of the long chromosome arm (q). If a gene is reverse-stranded, its sense (sequence matching cDNA) is on the reverse strand. Reverse strand is reverse complementary to the forward strand." []
+synonym: " - strand" EXACT []
+synonym: " -1 strand" EXACT []
+synonym: " negative strand" EXACT []
+synonym: "Minus strand" EXACT []
+xref: SO:0001031
+is_a: ENSGLOSSARY:0000001 ! Genome annotation
+relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000369 ! Forward strand
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/Help/Faq?id=367 xsd:string
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
