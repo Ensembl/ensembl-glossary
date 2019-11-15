@@ -4601,7 +4601,7 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000367">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000003"/>
         <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</property:documentation>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long-read�sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long-read sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tagine</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAGENE</rdfs:label>
     </owl:Class>

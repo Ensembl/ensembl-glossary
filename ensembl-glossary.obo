@@ -3028,7 +3028,7 @@ property_value: http://ensembl.org/glossary/property/documentation http://www.en
 [Term]
 id: ENSGLOSSARY:0000367
 name: TAGENE
-def: "Long-read�sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team." []
+def: "Long-read sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team." []
 synonym: "tagine" EXACT []
 is_a: ENSGLOSSARY:0000003 ! Transcript
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
