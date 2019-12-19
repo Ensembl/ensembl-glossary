@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2019-11-15
+data-version: http://ensembl.org/glossary/releases/2019-12-19
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3035,8 +3035,8 @@ property_value: http://ensembl.org/glossary/property/documentation http://www.en
 
 [Term]
 id: ENSGLOSSARY:0000368
-name: STOP codon readthrough
-def: "The coding sequence contains a STOP codon that is translated (as supported by experimental evidence), and termination occurs instead at a canonical STOP codon further downstream. It is currently unknown which codon is used to replace the translated STOP codon, hence it is represented by 'X' in the protein sequence" []
+name: Stop codon readthrough
+def: "The coding sequence contains a stop codon that is translated (as supported by experimental evidence), and termination occurs instead at a canonical stop codon further downstream. It is currently unknown which codon is used to replace the translated stop codon, hence it is represented by 'X' in the protein sequence" []
 xref: https://en.wikipedia.org/wiki/Stop_codon#Translational_readthrough
 is_a: ENSGLOSSARY:0000025 ! Biotype
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string

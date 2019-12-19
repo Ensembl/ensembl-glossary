@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
-        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2019-11-15/ensembl-glossary.owl"/>
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2019-12-19/ensembl-glossary.owl"/>
         <rdfs:comment>ensembl-glossary</rdfs:comment>
     </owl:Ontology>
     
@@ -4613,9 +4613,9 @@
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000368">
         <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000025"/>
         <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/biotypes.html</property:documentation>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The coding sequence contains a STOP codon that is translated (as supported by experimental evidence), and termination occurs instead at a canonical STOP codon further downstream. It is currently unknown which codon is used to replace the translated STOP codon, hence it is represented by &apos;X&apos; in the protein sequence</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The coding sequence contains a stop codon that is translated (as supported by experimental evidence), and termination occurs instead at a canonical stop codon further downstream. It is currently unknown which codon is used to replace the translated stop codon, hence it is represented by &apos;X&apos; in the protein sequence</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Stop_codon#Translational_readthrough</oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STOP codon readthrough</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stop codon readthrough</rdfs:label>
     </owl:Class>
     
 
