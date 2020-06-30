@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2019-12-19
+data-version: http://ensembl.org/glossary/releases/2020-06-30
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3066,6 +3066,13 @@ xref: SO:0001031
 is_a: ENSGLOSSARY:0000001 ! Genome annotation
 relationship: http://ensembl.org/glossary/property/related ENSGLOSSARY:0000369 ! Forward strand
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/Help/Faq?id=367 xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000371
+name: RefSeq Match
+def: "RefSeq transcripts that match 100% across the sequence, exon/intron structure and UTRs as part of the MANE project" []
+is_a: ENSGLOSSARY:0000365 ! MANE Select
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/mane.html xsd:string
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
