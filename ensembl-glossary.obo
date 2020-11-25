@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2020-06-30
+data-version: http://ensembl.org/glossary/releases/2020-11-17
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3073,6 +3073,12 @@ name: RefSeq Match
 def: "RefSeq transcripts that match 100% across the sequence, exon/intron structure and UTRs as part of the MANE project" []
 is_a: ENSGLOSSARY:0000365 ! MANE Select
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/mane.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000372
+name: UniProt Match
+def: "The UniProt isoform that matches to the Ensembl transcript" []
+is_a: ENSGLOSSARY:0000212 ! UniProt
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
