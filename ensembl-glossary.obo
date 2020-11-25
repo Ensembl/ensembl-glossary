@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2020-11-17
+data-version: http://ensembl.org/glossary/releases/2020-11-25
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3079,6 +3079,22 @@ id: ENSGLOSSARY:0000372
 name: UniProt Match
 def: "The UniProt isoform that matches to the Ensembl transcript" []
 is_a: ENSGLOSSARY:0000212 ! UniProt
+
+[Term]
+id: ENSGLOSSARY:0000373
+name: Nonsense Mediated Decay
+def: "A transcript with a premature stop codon considered likely to be subjected to targeted degradation. Nonsense-Mediated Decay is predicted to be triggered where the in-frame termination codon is found more than 50bp upstream of the final splice junction." []
+synonym: " Nonsense-Mediated Decay" EXACT []
+synonym: "NMD" EXACT []
+xref: https://en.wikipedia.org/wiki/Nonsense-mediated_decay
+is_a: ENSGLOSSARY:0000025 ! Biotype
+
+[Term]
+id: ENSGLOSSARY:0000374
+name: Non-ATG start
+def: "A transcript with a non-ATG start codon but which still encodes a methionine since the ribosomal machinery allows non-AUG to translate as methionine in specific cases." []
+xref: https://en.wikipedia.org/wiki/Start_codon
+is_a: ENSGLOSSARY:0000003 ! Transcript
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
