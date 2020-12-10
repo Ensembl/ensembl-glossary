@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2020-11-25
+data-version: http://ensembl.org/glossary/releases/2020-12-10
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3077,7 +3077,7 @@ property_value: http://ensembl.org/glossary/property/documentation http://www.en
 [Term]
 id: ENSGLOSSARY:0000372
 name: UniProt Match
-def: "The UniProt isoform that matches to the Ensembl transcript" []
+def: "The UniProt identifier that matches to the Ensembl transcript. This may be a UniProt protein isoform and will have a number suffix, or may just refer to a UniProt entry." []
 is_a: ENSGLOSSARY:0000212 ! UniProt
 
 [Term]
