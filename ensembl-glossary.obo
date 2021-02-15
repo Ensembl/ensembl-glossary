@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2020-12-10
+data-version: http://ensembl.org/glossary/releases/2021-02-15
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3095,6 +3095,17 @@ name: Non-ATG start
 def: "A transcript with a non-ATG start codon but which still encodes a methionine since the ribosomal machinery allows non-AUG to translate as methionine in specific cases." []
 xref: https://en.wikipedia.org/wiki/Start_codon
 is_a: ENSGLOSSARY:0000003 ! Transcript
+
+[Term]
+id: ENSGLOSSARY:0000375
+name: MANE Plus Clinical
+def: "Transcripts in the MANE Plus Clinical set are additional transcripts per locus necessary to support clinical variant reporting, for example transcripts containing known Pathogenic or Likely Pathogenic clinical variants not reportable using the MANE Select set. Note there may be additional clinically relevant transcripts in the wider RefSeq and Ensembl/GENCODE sets but not yet in MANE." []
+synonym: " Matched Annotation from NCBI and EBI Plus Clinical" EXACT []
+synonym: " Matched Annotation from NCBI and EMBL-EBI Plus Clinical" EXACT []
+synonym: " Matched Annotation from NCBI and Ensembl Plus Clinical" EXACT []
+synonym: "MAIN Plus Clinical" EXACT []
+is_a: ENSGLOSSARY:0000364 ! MANE
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related

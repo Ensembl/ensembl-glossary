@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
-        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2020-12-10/ensembl-glossary.owl"/>
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2021-02-15/ensembl-glossary.owl"/>
         <rdfs:comment>ensembl-glossary</rdfs:comment>
     </owl:Ontology>
     
@@ -4705,6 +4705,21 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcript with a non-ATG start codon but which still encodes a methionine since the ribosomal machinery allows non-AUG to translate as methionine in specific cases.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Start_codon</oboInOwl:hasDbXref>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-ATG start</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000375 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000375">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000364"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transcripts in the MANE Plus Clinical set are additional transcripts per locus necessary to support clinical variant reporting, for example transcripts containing known Pathogenic or Likely Pathogenic clinical variants not reportable using the MANE Select set. Note there may be additional clinically relevant transcripts in the wider RefSeq and Ensembl/GENCODE sets but not yet in MANE.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation from NCBI and EBI Plus Clinical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation from NCBI and EMBL-EBI Plus Clinical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Matched Annotation from NCBI and Ensembl Plus Clinical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MAIN Plus Clinical</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MANE Plus Clinical</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
