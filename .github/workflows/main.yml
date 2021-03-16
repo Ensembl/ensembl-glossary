@@ -42,12 +42,9 @@ jobs:
           make prepare_release
           cd ../..
       
-      - name: Commit ontology files
-        run: |
-          git config --global user.name 'Automated Commit'
-          git config --global user.email 'automated@users.noreply.github.com'
-          git add ensembl-glossary.obo ensembl-glossary.owl
-          git commit -m "Commit latest ontology file"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply new ontology files
+          file_pattern: ensembl-glossary.o*
 
 
