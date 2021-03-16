@@ -46,7 +46,8 @@ jobs:
         run: |
           git config --global user.name 'Automated Commit'
           git config --global user.email 'automated@users.noreply.github.com'
-          git commit -am "Commit latest ontology file" src/
+          git add src/
+          git commit -m "Commit latest ontology file"
           git push
 
 
