@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ensembl-glossary.owl">
-        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2021-02-15/ensembl-glossary.owl"/>
+        <owl:versionIRI rdf:resource="http://ensembl.org/glossary/ensembl-glossary/releases/2021-03-16/ensembl-glossary.owl"/>
         <rdfs:comment>ensembl-glossary</rdfs:comment>
     </owl:Ontology>
     
