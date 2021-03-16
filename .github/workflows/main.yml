@@ -46,7 +46,7 @@ jobs:
         run: |
           git config --global user.name 'Automated Commit'
           git config --global user.email 'automated@users.noreply.github.com'
-          git add src/
+          git add ensembl-glossary.obo ensembl-glossary.owl
           git commit -m "Commit latest ontology file"
           git push
 
