@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2021-04-19
+data-version: http://ensembl.org/glossary/releases/2021-04-26
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -180,7 +180,7 @@ property_value: http://ensembl.org/glossary/property/documentation http://www.en
 [Term]
 id: ENSGLOSSARY:0000023
 name: Ensembl canonical
-def: "A single transcript chosen for a gene which is the most conserved, most highly expressed, has the longest coding sequence and is represented in other key resources, such as NCBI and UniProt. This is defined in detail on http://www.ensembl.org/info/genome/genebuild/canonical.html" []
+def: "A single transcript chosen for a gene which is the most conserved, most highly expressed, has the longest coding sequence and is represented in other key resources, such as NCBI and UniProt. This is defined in detail on http://www.ensembl.org/info/genome/genebuild/canonical.html" []
 synonym: " canonical transcript" EXACT []
 synonym: "Canonical" EXACT []
 is_a: ENSGLOSSARY:0000003 ! Transcript
