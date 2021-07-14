@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2021-04-26
+data-version: http://ensembl.org/glossary/releases/2021-07-14
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3017,17 +3017,6 @@ is_a: ENSGLOSSARY:0000364 ! MANE
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
 
 [Term]
-id: ENSGLOSSARY:0000366
-name: MANE Select v0.5
-def: "The preliminary release (phase 1) of the MANE Select data set. The MANE Select is a default transcript per human gene that is representative of biology, well-supported, expressed and highly-conserved. This transcript set matches GRCh38 and is 100% identical between RefSeq and Ensembl/GENCODE for 5' UTR, CDS, splicing and 3'UTR." []
-synonym: " Matched Annotation between NCBI and EMBL-EBI Select v0.5" EXACT []
-synonym: " Matched Annotation from NCBI and EBI Select v0.5" EXACT []
-synonym: " Matched Annotation from NCBI and Ensembl Select v0.5" EXACT []
-synonym: "MAIN Select v0.5" EXACT []
-is_a: ENSGLOSSARY:0000365 ! MANE Select
-property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
-
-[Term]
 id: ENSGLOSSARY:0000367
 name: TAGENE
 def: "Long-read sequence data is computationally processed into non-redundant transcript models which are manually appraised by the Ensembl-Havana annotation team." []
@@ -3107,6 +3096,13 @@ synonym: " Matched Annotation from NCBI and EMBL-EBI Plus Clinical" EXACT []
 synonym: " Matched Annotation from NCBI and Ensembl Plus Clinical" EXACT []
 synonym: "MAIN Plus Clinical" EXACT []
 is_a: ENSGLOSSARY:0000364 ! MANE
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000376
+name: GENCODE Comprehensive
+def: "The full GENCODE transcript set, containing both complete transcripts and 5' and 3' incomplete transcripts." []
+is_a: ENSGLOSSARY:0000003 ! Transcript
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
 
 [Typedef]
