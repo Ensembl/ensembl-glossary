@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2021-07-14
+data-version: http://ensembl.org/glossary/releases/2022-08-31
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3104,6 +3104,13 @@ name: GENCODE Comprehensive
 def: "The full GENCODE transcript set, containing both complete transcripts and 5' and 3' incomplete transcripts." []
 is_a: ENSGLOSSARY:0000003 ! Transcript
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000377
+name: Protein coding CDS not defined
+def: "Alternatively spliced transcript of a protein coding gene for which we cannot define a CDS." []
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
