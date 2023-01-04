@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2022-08-31
+data-version: http://ensembl.org/glossary/releases/2023-01-04
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3109,6 +3109,13 @@ property_value: http://ensembl.org/glossary/property/documentation http://www.en
 id: ENSGLOSSARY:0000377
 name: Protein coding CDS not defined
 def: "Alternatively spliced transcript of a protein coding gene for which we cannot define a CDS." []
+is_a: ENSGLOSSARY:0000025 ! Biotype
+property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000378
+name: Protein coding LOF
+def: "Not translated in the reference genome owing to a SNP/DIP but in other individuals/haplotypes/strains the transcript is translated. Replaces the polymorphic_pseudogene transcript biotype." []
 is_a: ENSGLOSSARY:0000025 ! Biotype
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
 
