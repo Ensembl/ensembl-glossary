@@ -4747,8 +4747,9 @@
     <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000379 -->
 
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000379">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Not part of the MANE transcript set but a version of a MANE Select or MANE Plus Clinical transcripts with maximal 3’ and/or 5’ UTR extension. The extension is added by the LEAP pipeline based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000003"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Not part of the MANE transcript set but a version of a MANE Select or MANE Plus Clinical transcripts with maximal 3’ and/or 5’ UTR extension. The extension is added by the LEAP pipeline based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ensembl Canonical Extended</rdfs:label>
     </owl:Class>
     
 
@@ -4756,8 +4757,9 @@
     <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000380 -->
 
     <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000380">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html</oboInOwl:hasDbXref>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long read Extension and Annotation Pipeline (LEAP) adds UTR extensions to transcripts based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long read Extension and Annotation Pipeline (LEAP) adds UTR extensions to transcripts based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LEAP</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
