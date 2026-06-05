@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://ensembl.org/glossary/releases/2023-01-04
+data-version: http://ensembl.org/glossary/releases/2026-06-05
 remark: ensembl-glossary
 ontology: ensembl-glossary
 
@@ -3118,6 +3118,16 @@ name: Protein coding LOF
 def: "Not translated in the reference genome owing to a SNP/DIP but in other individuals/haplotypes/strains the transcript is translated. Replaces the polymorphic_pseudogene transcript biotype." []
 is_a: ENSGLOSSARY:0000025 ! Biotype
 property_value: http://ensembl.org/glossary/property/documentation http://www.ensembl.org/info/genome/genebuild/biotypes.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000379
+name: Not part of the MANE transcript set but a version of a MANE Select or MANE Plus Clinical transcripts with maximal 3’ and/or 5’ UTR extension. The extension is added by the LEAP pipeline based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini.
+xref: http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html
+
+[Term]
+id: ENSGLOSSARY:0000380
+name: Long read Extension and Annotation Pipeline (LEAP) adds UTR extensions to transcripts based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini
+xref: http://www.ensembl.org/info/genome/genebuild/transcript_quality_tags.html
 
 [Typedef]
 id: http://ensembl.org/glossary/property/related
