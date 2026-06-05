@@ -3131,6 +3131,20 @@ name: LEAP
 def: "Long read Extension and Annotation Pipeline (LEAP) adds UTR extensions to transcripts based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini" []
 is_a: ENSGLOSSARY:0000254 ! Algorithm
 
+[Term]
+id: ENSGLOSSARY:0000381
+name: AlphaMissense
+def: "A deep learning model developed by Google DeepMind that predicts the pathogenicity of single nucleotide missense variants." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
+
+[Term]
+id: ENSGLOSSARY:0000382
+name: ESM1b
+def: "A tool that predicts pathogenic effects of coding variants using a 650-million-parameter protein language model." []
+is_a: ENSGLOSSARY:0000254 ! Algorithm
+property_value: http://ensembl.org/glossary/property/documentation https://www.ensembl.org/info/genome/variation/prediction/protein_function.html xsd:string
+
 [Typedef]
 id: http://ensembl.org/glossary/property/related
 name: related

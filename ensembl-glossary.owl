@@ -4761,6 +4761,28 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long read Extension and Annotation Pipeline (LEAP) adds UTR extensions to transcripts based on PacBio/Nanopore and PolyA/CAGE data or manually curated transcript termini</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LEAP</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000381 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000381">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A deep learning model developed by Google DeepMind that predicts the pathogenicity of single nucleotide missense variants.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AlphaMissense</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ensembl.org/glossary/ENSGLOSSARY_0000382 -->
+
+    <owl:Class rdf:about="http://ensembl.org/glossary/ENSGLOSSARY_0000382">
+        <rdfs:subClassOf rdf:resource="http://ensembl.org/glossary/ENSGLOSSARY_0000254"/>
+        <property:documentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.ensembl.org/info/genome/variation/prediction/protein_function.html</property:documentation>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool that predicts pathogenic effects of coding variants using a 650-million-parameter protein language model.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ESM1b</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 
